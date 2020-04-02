@@ -1,0 +1,139 @@
+// colors
+$sitePalette:(
+    //blue
+    c1:(
+        primary:#1273bc,
+        secondary:#5ca1ef,
+        tertiary:#00488b,
+    ),
+     //white
+     c2:(
+        primary:#f1f1f1,
+        secondary:#ffffff,
+        tertiary:#cccccc,
+    ),
+    //black
+    c3:(
+        primary:#060606,
+        secondary:#333333,
+        tertiary:#000000,
+    ),
+    //gray
+    c4:(
+        primary:#414752,
+        secondary:#6c727e,
+        tertiary:#1a202a,
+    ),
+    //red
+    c5:(
+        primary:#a90010,
+        secondary:#e24738,
+        tertiary:#720000,
+    ),
+    //yellow
+    c6:(
+        primary:#ffeb01,
+        secondary:#ffff56,
+        tertiary:#c7b900,
+    ),
+    //green
+    c7:(
+        primary:#5fb602,
+        secondary:#94e948,
+        tertiary:#258500,
+    ),
+    //cyan 
+    c8:(
+      primary:#2191d6,
+      secondary:#68c1ff,
+      tertiary:#0064a4,
+    ),
+    //orange
+    c9:(
+      primary:#ff3700,
+      secondary:#ff7139,
+      tertiary:#c30000,
+    ),
+    //gray dark
+    c10:(
+      primary:#272727,
+      secondary:#4f4f4f,
+      dark:#0f0f0f,
+    ),
+    //vanish
+    c11:(
+      primary:#c4a747,
+      secondary:#f9d876,
+      tertiary:#917816,
+    )
+
+);
+
+
+@function setcolor($color, $tone: primary) {
+  @return map-get(map-get($sitePalette, $color), $tone);
+}
+
+@mixin sitePalette($k){
+   
+    %normal-#{$k} {
+      color: setcolor(c#{$k}, primary);
+    };
+    %light-#{$k} {
+      color: setcolor(c#{$k}, secondary);
+    };
+    %dark-#{$k} {
+      color: setcolor(c#{$k}, tertiary);
+    };
+    %bg-normal-#{$k}{
+      background: setcolor(c#{$k}, primary);
+    };
+    %bg-light-#{$k}{
+      background: setcolor(c#{$k}, secondary);
+    };
+    %bg-dark-#{$k}{
+      background: setcolor(c#{$k}, tertiary);
+    };
+    %border-normal-#{$k}{
+      border-color:setcolor(c#{$k}, primary);
+    };
+    %border-light-#{$k}{
+      border-color:setcolor(c#{$k}, secondary);
+    };
+    %border-dark-#{$k}{
+      border-color:setcolor(c#{$k}, tertiary);
+    };
+}
+
+// colors set
+@for $i from 1 through 11 {
+
+  @include sitePalette($i);
+  .normal-#{$i}{
+    @extend %normal-#{$i};
+  }
+  .light-#{$i}{
+    @extend %light-#{$i};
+  }
+  .dark-#{$i}{
+    @extend %dark-#{$i};
+  }
+  .bg-normal-#{$i} {
+    @extend %bg-normal-#{$i};
+  }
+  .bg-light-#{$i} {
+    @extend %bg-light-#{$i};
+  }
+  .bg-dark-#{$i} {
+    @extend %bg-dark-#{$i};
+  }
+  .border-normal-#{$i} {
+    @extend %border-normal-#{$i};
+  }
+  .border-light-#{$i} {
+    @extend %border-light-#{$i};
+  }
+  .border-dark-#{$i} {
+    @extend %border-dark-#{$i};
+  }
+}

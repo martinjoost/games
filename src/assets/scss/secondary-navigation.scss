@@ -1,0 +1,68 @@
+.secondary-navigation {
+    background:rgba(0,0,0,.7);
+    @extend %light-c6;
+    //@include customRadius(20px, 20px, 0, 0);
+    .sn-first-list {
+        li {
+            @extend %relative;
+            @extend %txt-center;
+            margin:0 1.5%;
+            .mat-icon-button {
+                font-size:3em;
+                @extend %transition-035;
+                @include sm {
+                    font-size:2.5em;
+                }
+            };
+            .cs-box {
+                li {
+                    @extend %margin-top-bottom-10;
+                }
+            };
+            .mat-icon-button.current-option,
+            &:hover {
+                @extend %normal-c1;
+            }
+        }
+    };
+    .cs-box {
+        bottom:55px;
+        @extend %left-0;
+        transform-origin: bottom center;
+        a {
+            width:35px;
+            height:35px;
+            @extend %light-c6;
+            @extend %relative;
+            border:1px solid rgba(255,255,255,.9);
+            @extend %circle;
+            @extend %opacity-box-dark;
+            @extend %transition-035;
+            i {
+                @extend %absolute;
+                @extend %top-50p;
+                @extend %left-50p;
+                @include transform(translate3d(-50%,-50%,0));
+                font-size:1.8em;
+            }
+            &:hover {
+                @extend %normal-c1;
+                border-color:map-get(map-get($palette, c1), tnormal);
+            }
+        }; 
+    }
+}
+
+.is-home {
+    .secondary-navigation {
+        @extend %opacity-0;
+        @extend %transition-1;
+        @include transition-delay(1.5s);
+    }
+}
+
+.is-home.home-load {
+    .secondary-navigation  {
+        @extend %opacity-1;
+    }
+}

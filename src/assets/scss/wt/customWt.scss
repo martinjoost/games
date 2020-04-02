@@ -1,0 +1,172 @@
+.body {
+    color:map-get(map-get($sitePalette, c3), secondary);
+    background:map-get(map-get($sitePalette, c4), secondary);
+}
+
+.a {
+    &:hover {
+        color: map-get(map-get($sitePalette, c1), primary);
+    }
+}
+
+.mat-icon-button {
+    @extend %transition-05;
+    @media only screen and (min-width:1080px){
+        &:hover {
+            color:map-get(map-get($sitePalette, c7), primary);
+        }
+    }
+}
+
+.mat-icon-button {
+    width:25px;
+    height:25px;
+    font-size:20px;
+    line-height:25px;
+}
+
+//main-wrapper
+.main-wrapper {
+    @extend %bg-light-2;
+   //background-color:map-get(map-get($sitePalette, c2), tertiary);
+}
+
+//ribbon
+.ribbon {
+    span {
+      &::before{
+          content: '';
+          @extend %absolute; @extend %left-0; 
+          border-left: 3px solid map-get(map-get($sitePalette, c5), primary);
+          border-right: 3px solid transparent;
+          border-bottom: 3px solid transparent;
+          border-top: 3px solid map-get(map-get($sitePalette, c5), primary);
+      };
+      &::after{
+          content: '';
+          @extend %absolute; @extend %right-0;
+          z-index: -1;
+          border-left: 3px solid transparent;
+          border-right: 3px solid map-get(map-get($sitePalette, c5), primary);
+          border-bottom: 3px solid transparent;
+          border-top: 3px solid map-get(map-get($sitePalette, c5), primary);
+      }
+  
+    }
+    
+}
+
+
+//links
+.link {
+    @extend %dark-7;
+    &:hover {
+        @extend %normal-7;
+    }
+}
+
+//material form elements
+.mat-input-element,
+.mat-form-field,
+.mat-slide-toggle-content {
+    @extend %lato;
+}
+
+.mat-form-field-ripple {
+    background-color:map-get(map-get($sitePalette, c7), tertiary)!important;
+}
+
+.mat-focused .mat-form-field-label {
+    color:map-get(map-get($sitePalette, c4), tertiary)!important;
+}
+
+.mat-form-field-prefix, .mat-form-field-suffix
+.mat-form-field-appearance-legacy .mat-form-field-prefix .mat-icon, 
+.mat-form-field-appearance-legacy .mat-form-field-suffix .mat-icon {
+    color:map-get(map-get($sitePalette, c4), secondary)!important;
+}
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: map-get(map-get($sitePalette, c7), primary);
+}
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: map-get(map-get($sitePalette, c7), tertiary);
+}
+
+.mat-error {
+    color: map-get(map-get($sitePalette, c5), light);
+}
+
+.date-picker-width {
+    width:100px;
+    .mat-button-focus-overlay {
+        top:-9px;
+        left:-4px;
+        width:25px;
+        height:25px;
+    }
+    
+}
+
+.mat-tab-link.current-tab {
+    @extend %opacity-1;
+}
+
+.mat-tab-link {
+    @extend %lato;
+    @extend %weight-600;
+}
+
+.current-tab {
+    @extend %dark-3;
+    border-bottom:2px solid map-get(map-get($sitePalette, c1), secondary);
+}
+
+.tab-done {
+    font-size:2em;
+}
+
+.mat-datepicker-toggle-default-icon.ng-star-inserted {
+    @extend %relative;
+    top:-8px;
+    @extend %normal-7;
+}
+
+.mat-form-field-appearance-legacy {
+    .mat-form-field-suffix {
+        .mat-datepicker-toggle-default-icon {
+            width:1.8em!important;
+        }
+    }
+}
+
+.mat-calendar-body-selected {
+    @extend %bg-normal-1;
+}
+
+.mat-step-label {
+    line-height: normal;
+}
+
+.mat-step-label-selected,
+.mat-step-label {
+    @media only screen and (max-width:580px){
+        font-size:12px;
+    }
+}
+
+@include md {
+    .mat-tab-link {
+        font-size:12px;
+    }
+}
+
+.mat-stepper-label-position-bottom {
+    .mat-horizontal-stepper-header-container{
+        @extend %margin-bottom-15;
+    }
+}
+
+ 
+

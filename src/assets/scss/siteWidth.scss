@@ -1,0 +1,37 @@
+// site width
+$siteWidth:(
+  full:100%,
+  full-hd:1920px,
+  w-standard-lg:1280px,
+  w-standard-md:1180px,
+  w-standard-sm:1080px,
+  hd:1024px
+);
+
+@each $name, $width in $siteWidth {
+
+  %#{$name}{
+    max-width:$width;
+  }
+
+  .#{$name}{
+    @extend %#{$name};
+  }   
+} 
+
+.full .content-wrap,
+.full-hd .content-wrap {
+  @extend %w-standard-lg;
+}
+
+.w-standard-lg .content-wrap {
+  @extend %w-standard-md;
+}
+
+.w-standard-md .content-wrap {
+  @extend %w-standard-sm;
+}
+
+.w-standard-sm .content-wrap {
+  @extend %hd;
+}

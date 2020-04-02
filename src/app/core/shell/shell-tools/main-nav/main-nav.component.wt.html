@@ -1,0 +1,160 @@
+<ng-container *ngIf="!sys">
+    <button class="main-menu-icon  z-index-800" [ngClass]="[isOpen ? 'light-2' : 'light-c5']" (click)="isOpenMenu()"  mat-icon-button aria-label="Main menu icon" aria-hidden="true">
+        <mat-icon inline>
+            <ng-container *ngIf="!isOpen">
+                menu
+            </ng-container >
+            <ng-container *ngIf="isOpen">
+                close
+            </ng-container >
+        </mat-icon>
+    </button> 
+    <nav  *ngIf="isOpen" (swiperight)="isOpenMenu()" class="fixed top-0 right-0 flex row y-items-center x-content-center txt-center main-nav full-width vh-100 z-index-700" [ngClass]="{'is-open':isOpen}" [@isOpenNav2]="isOpen">
+        <ul class="bullest-none">
+            <li>
+                <a routerLink="home" (click)="isOpenMenu()" routerLinkActive="router-link-active">
+                   {{'NAV.home' | translate}}
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    {{'NAV.lotteries' | translate}}
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    {{'NAV.games' | translate}}
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    {{'NAV.instantwin' | translate}}
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    {{'NAV.syndicates' | translate}}
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    {{'NAV.wheels' | translate}}
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    {{'NAV.raffles' | translate}}
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    {{'NAV.giftcards' | translate}}
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    {{'NAV.results' | translate}}
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    {{'NAV.contactus' | translate}}
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    {{'NAV.faqs' | translate}}
+                </a>
+            </li>
+        </ul>
+    </nav> 
+</ng-container>
+<ng-container *ngIf="sys">
+    <button class="main-menu-icon light-c5 z-index-800" (click)="isOpenMenu()"  mat-icon-button aria-label="Main menu icon" aria-hidden="true">
+        <mat-icon inline>
+            <ng-container *ngIf="!isOpen">
+                sort
+            </ng-container>
+            <ng-container *ngIf="isOpen">
+                close
+            </ng-container >
+        </mat-icon>
+    </button> 
+    <nav *ngIf="isOpen" (swiperight)="isOpenMenu()" class="fixed top-0 right-0 full-width vh-100 z-index-700" [ngClass]="{'is-open':isOpen}" [@isOpenNav]="isOpen">
+        <div class="nav-list-wrap absolute top-0 right-0 flex row y-items-center x-content-center txt-center main-nav full-width full-height">
+                <ul class="bullest-none">
+                        <li class="account-navigation-box absolute top-0 left-0 full-width padding-top-20 txt-center">
+                            <button class="main-menu-icon normal-4"  mat-icon-button aria-label="Login" aria-hidden="true">
+                                <mat-icon inline>
+                                    account_circle
+                                </mat-icon>
+                            </button> 
+                            <button class="main-menu-icon normal-4"  mat-icon-button aria-label="Cart" aria-hidden="true">
+                                <mat-icon inline>
+                                    shopping_cart
+                                </mat-icon>
+                            </button> 
+                        </li>
+                        <li>
+                            <a routerLink="home" (click)="isOpenMenu()" routerLinkActive="router-link-active">
+                                {{'NAV.home' | translate}}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                {{'NAV.lotteries' | translate}}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                {{'NAV.games' | translate}}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                {{'NAV.instantwin' | translate}}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                {{'NAV.syndicates' | translate}}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                {{'NAV.wheels' | translate}}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                {{'NAV.raffles' | translate}}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                {{'NAV.giftcards' | translate}}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                {{'NAV.results' | translate}}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                {{'NAV.contactus' | translate}}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                {{'NAV.faqs' | translate}}
+                            </a>
+                        </li>
+                    </ul>
+        </div>
+       
+    </nav> 
+        
+</ng-container>
+    
+

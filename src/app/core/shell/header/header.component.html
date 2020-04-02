@@ -1,0 +1,175 @@
+<header [class]="set" [ngClass]="{'fixed z-index-600':fixed}">
+    <ng-container *ngIf="sys">
+        <div class="header-top-bar relative-left full-width">
+            <div class="content-wrap full-height flex row y-items-center">
+                <figure class="relative top-bar-logo grow-1">
+                    <a routerLink="/home" alt="home" [attr.title]="alt">
+                        <ng-container *ngIf="system === 'ltk'">
+                            <img class="ltk-iso" [attr.src]="'./assets/images/brand-logo/'+system+'/avatar-shadow.png'"
+                                width="50" [attr.alt]="alt" />
+                            <img class="ltk-logo-txt opacity-0 transition-035"
+                                [attr.src]="'./assets/images/brand-logo/' +system+ '/logo-txt.png'" width="190"
+                                [attr.alt]="alt" />
+                        </ng-container>
+                        <ng-container *ngIf="system === 'wt'">
+                            <img *ngIf="!logoSpecialDay" class="logo"
+                                [attr.src]="'./assets/images/brand-logo/' +system+ '/logo.png'" width="224"
+                                [attr.alt]="alt" />
+
+                            <img *ngIf="logoSpecialDay" [src]="logoSpecialDay" width="200" />
+                        </ng-container>
+                    </a>
+                </figure>
+                <div class="grow-1 ">
+                    <div class="fright">
+                        <div class="relative-left menu-options margin-right-30">
+                            <div class="menu-search relative-left margin-left-right-5">
+                                <button class="main-menu-icon normal-4" mat-icon-button aria-label="Login"
+                                    aria-hidden="true">
+                                    <mat-icon inline>
+                                        search
+                                    </mat-icon>
+                                </button>
+                            </div>
+                            <div class="relative-left margin-left-right-5 account-wrap">
+                                <div class="menu-login-wrap relative-left margin-left-right-5">
+                                    <div *ngIf="!isAuthenticatedByToken">
+                                        <button [matMenuTriggerFor]="login" class="main-menu-icon normal-4"
+                                            mat-icon-button aria-label="Login" aria-hidden="true">
+                                            <mat-icon inline>
+                                                person_pin
+                                            </mat-icon>
+                                        </button>
+                                        <mat-menu #login="matMenu">
+                                            <button mat-menu-item (click)="isLogin(true)">
+                                               Sign In
+                                            </button>
+                                            <mat-divider></mat-divider>
+                                            <button mat-menu-item (click)="isLogin(false)">
+                                                Sign Up
+                                            </button>
+                                        </mat-menu>
+                                    </div>
+                                    <div *ngIf="isAuthenticatedByToken">
+                                        <button [matMenuTriggerFor]="editprofile" class="main-menu-icon normal-4"
+                                            mat-icon-button aria-label="Login" aria-hidden="true">
+                                            <mat-icon inline>
+                                                person_pin
+                                            </mat-icon>
+                                        </button>
+                                        <mat-menu #editprofile="matMenu">
+                                            <button mat-menu-item (click)="account()">
+                                                <!--{{profileDetails}}-->
+                                               My Account
+                                            </button>
+                                            <button mat-menu-item (click)="openLogoutDialog()">
+                                                Log Out
+                                            </button>
+                                        </mat-menu>
+                                    </div>
+
+                                </div>
+                                <div class="menu-cart-wrap relative-left margin-left-right-5">
+                                    <button class="main-menu-icon normal-4" mat-icon-button aria-label="Login"
+                                        aria-hidden="true">
+                                        <mat-icon inline>
+                                            shopping_cart
+                                        </mat-icon>
+                                    </button>
+                                </div>
+
+                            </div>
+                            <div class="menu-lang relative-left margin-left-right-5">
+                                <button [matMenuTriggerFor]="selectLanguage" class="main-menu-icon normal-4"
+                                    mat-icon-button aria-label="Login" aria-hidden="true">
+                                    <mat-icon inline>
+                                        language
+                                    </mat-icon>
+                                </button>
+                                <mat-menu #selectLanguage="matMenu">
+                                </mat-menu>
+                            </div>
+                        </div>
+
+                        <div class="relative-left">
+                            <app-main-nav [sys]="false"></app-main-nav>
+                            <ng-content></ng-content>
+                            <!--<app-main-navigation></app-main-navigation>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <app-main-nav-bar></app-main-nav-bar>
+
+        <ng-content></ng-content>
+    </ng-container>
+    <ng-container *ngIf="!sys">
+        <ng-container *ngIf="headerBgFx">
+            <div class="header-bg-fx absolute top-0 left-0 full-width full-height"></div>
+        </ng-container>
+        <div class="content-wrap full-height flex row y-items-center ">
+            <figure class="grow-1">
+                <a routerLink="/home" alt="home" [attr.title]="alt">
+                    <ng-container *ngIf="system === 'ltk'">
+                        <img class="ltk-iso" [attr.src]="'./assets/images/brand-logo/'+system+'/avatar-shadow.png'"
+                            width="50" [attr.alt]="alt" />
+                        <img class="ltk-logo-txt opacity-0 transition-035"
+                            [attr.src]="'./assets/images/brand-logo/' +system+ '/logo-txt.png'" width="190"
+                            [attr.alt]="alt" />
+                    </ng-container>
+                    <ng-container *ngIf="system === 'wt'">
+                        <img class="logo" [attr.src]="'./assets/images/brand-logo/' +system+ '/logo.png'" width="330"
+                            [attr.alt]="alt" />
+                    </ng-container>
+                </a>
+            </figure>
+            <div class="grow-1 ">
+                <div class="fright">
+                    <div class="relative-left menu-options margin-right-30 opacity-0">
+                        <div class="menu-lang-wrap relative-left margin-left-right-5">
+                            <a href="#" class="item inline-block circle underline-none">
+                                <img src="./assets/images/flags/gb-xs.png" width="25" />
+                            </a>
+                        </div>
+                        <div class="menu-currency-wrap relative-left margin-left-right-5">
+                            <a href="#" class="item inline-block circle weight-900 underline-none bg-normal-7 light-2">
+                                $
+                            </a>
+                        </div>
+                        <div class="user-options-wrap relative-left margin-left-right-5 padding-bottom-5">
+                            <div class="menu-cart-wrap relative-left">
+                                <button class="main-menu-icon normal-4" mat-icon-button aria-label="Login"
+                                    aria-hidden="true">
+                                    <mat-icon inline>
+                                        account_circle
+                                    </mat-icon>
+                                </button>
+                            </div>
+                            <div class="menu-cart-wrap relative-left">
+                                <button class="main-menu-icon normal-4" mat-icon-button aria-label="cart"
+                                    aria-hidden="true">
+                                    <mat-icon inline>
+                                        shopping_cart
+                                    </mat-icon>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="relative-left">
+                        <app-main-nav [sys]="true"></app-main-nav>
+                        <ng-content></ng-content>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="showLogin">
+        <app-login [state]="signInUp" (showLogin)="showLogin = $event"></app-login>
+    </ng-container>
+    <ng-container *ngIf="showRecovery">
+        <app-recovery [token]="passwordResetToken" (showRecovery)="showRecovery = $event"></app-recovery>
+    </ng-container>
+</header>

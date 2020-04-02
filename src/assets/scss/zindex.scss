@@ -1,0 +1,10 @@
+@for $i from 1 through 9 {
+  $k: $i * 100;
+  %z-index-#{$k}{
+    z-index:$k;
+  }
+
+  .z-index-#{$k}{
+    @extend  %z-index-#{$k};
+  } 
+}

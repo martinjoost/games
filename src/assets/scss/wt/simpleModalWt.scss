@@ -1,0 +1,35 @@
+.wt {
+    .simple-modal-wrap {
+        .overlay {
+            background:rgba(0,0,0,.4);
+        }
+        .simple-modal-content-wrap {
+            max-width:680px;
+            width:80%;
+            min-height:150px;
+            transform-origin: bottom center;
+            .button.mat-sm {
+                @extend %margin-top-20;
+                @extend %inline-block;
+            }
+        }
+        h4 {
+            font-size:2.2em;
+        }
+        .mat-icon-button {
+            @extend %absolute;
+            @extend %top-5;
+            @extend %right-5;
+            
+        }
+    
+    }
+
+    .simple-modal-wrap.simple-modal-content-set {
+        .simple-modal-content {
+            p {
+                font-size:1.6em;
+            }
+        }
+    }
+}

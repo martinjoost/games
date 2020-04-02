@@ -1,0 +1,100 @@
+// keyframes
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+      @content;
+  }
+
+  @-ms-keyframes #{$name} {
+      @content;
+  }
+
+  @-moz-keyframes #{$name} {
+      @content;
+  }
+
+  @keyframes #{$name} {
+      @content;
+  }
+}
+
+//animation
+@mixin animation($animName, $duration, $timing, $delay, $iterationCount, $direction, $fillMode) {
+  @each $prefix in $prefixes {
+      @if($prefix != nth($prefixes, 2)) {
+          #{$prefix + animation}: $animName $duration $timing $delay $iterationCount $direction $fillMode;
+      }
+  }
+  animation: $animName $duration $timing $delay $iterationCount $direction $fillMode;
+}
+
+@mixin animationDuration($duration) {
+  @each $prefix in $prefixes {
+      @if($prefix != nth($prefixes, 2)) {
+          #{$prefix + animation-duration}: $duration;
+      }
+  }
+  animation-duration: $duration;
+}
+
+@mixin animationTiming($timing) {
+  @each $prefix in $prefixes {
+      @if($prefix != nth($prefixes, 2)) {
+          #{$prefix + animation-timing-function}: $timing;
+      }
+  }
+  animation-timing-function: $timing;
+}
+
+@mixin animationDelay($delay) {
+  @each $prefix in $prefixes {
+      @if($prefix != nth($prefixes, 2)) {
+          #{$prefix + animation-delay}: $delay;
+      }
+  }
+  animation-delay: $delay;
+}
+
+@mixin animationIterationCount($iterationCount) {
+  @each $prefix in $prefixes {
+      @if($prefix != nth($prefixes, 2)) {
+          #{$prefix + animation-iteration-count}: $iterationCount;
+      }
+  }
+  animation-iteration-count: $iterationCount;
+}
+
+@mixin animationLoop($loop) {
+  @each $prefix in $prefixes {
+      @if($prefix != nth($prefixes, 2)) {
+          #{$prefix + animation-iteration-count}: $loop;
+      }
+  }
+  animation-iteration-count: $loop;
+}
+
+@mixin animationDirection($direction) {
+  @each $prefix in $prefixes {
+      @if($prefix != nth($prefixes, 2)) {
+          #{$prefix + animation-direction}: $direction;
+      }
+  }
+  animation-direction: $direction;
+}
+
+@mixin animationFillMode($fillMode) {
+  @each $prefix in $prefixes {
+      @if($prefix != nth($prefixes, 2)) {
+          #{$prefix + animation-fill-mode}: $fillMode;
+      }
+  }
+  animation-fill-mode: $fillMode;
+}
+
+@mixin animationPlayState($playState) {
+  @each $prefix in $prefixes {
+      @if($prefix != nth($prefixes, 2)) {
+          #{$prefix + animation-play-state}: $playState;
+      }
+  }
+  animation-play-state: $playState;
+}

@@ -1,0 +1,300 @@
+.home {
+    background-position: center 0;
+    background-size:cover;
+}
+
+.intro-home-slider {
+    @extend %z-index-100;
+    h2,
+    h3,
+    p {
+        @extend %line-height-normal;
+        text-shadow: 0 0 6px rgba(0,0,0,.5);
+    }
+    h2 {
+        font-size: 4.8em;
+        letter-spacing: 3px;
+        //ltk
+        @include md {
+            font-size:4em;
+            letter-spacing: 2px;
+        }
+        @media only screen and (max-width:680px) {
+            font-size:3.5em;
+            letter-spacing: 1px;
+        }
+        @media only screen and (max-width:580px){
+            font-size:3.2em;
+            letter-spacing: 0;
+         }
+    }
+   
+    h3,
+    p {
+        strong {
+            font-size:1.2em;
+        }
+    }
+    h3 {
+        font-size:4em;
+        letter-spacing: 3px;
+        @media only screen and (max-width:680px) {
+            font-size:3.5em;
+            letter-spacing: 1px;
+        }
+        @media only screen and (max-width:580px){
+           font-size:3em;
+        }
+       
+    }
+    .timer {
+        font-size: 1.4em;
+        @media only screen and (max-width:580px){
+            font-size:1em;
+         }
+        strong {
+            @extend %weight-600;
+        }
+    }
+    img {
+        @include transform(rotate(0));
+    }
+    &:hover {
+        img {
+            @include transform(rotate(360deg));
+        }
+    }
+    
+}
+
+.home-syndicates-promo {
+    .two-boxes {
+        .item { 
+            &:first-child {
+                width:50%;
+                @extend %padding-20;
+                @include xmd {
+                    padding:10px;
+                }
+                @include md {
+                    width:100%
+                }
+            }
+            &:last-child {
+                width:50%;
+                @extend %padding-40;
+                @include lg {
+                    padding:30px;
+                }
+                h3 {
+                    font-size:3.5em;
+                    @extend %margin-bottom-30;
+                    small {
+                        font-size:.7em;
+                    }
+                    @include lg {
+                        font-size:3em;
+                    }
+                }
+                p {
+                    font-size:1.8em;
+                    line-height: 1.65em;
+                    @include lg {
+                        font-size:1.6em;
+                    }
+                }
+                @include md {
+                    width:100%
+                }
+            }
+        }
+       
+    }
+}
+.site-safe-items {
+    height:400px;
+    li {
+        width:32%;
+        h3 {
+            font-size:3em;
+        }
+        p {
+            font-size:1.6em;
+            line-height: 1.4em;
+        }
+        img {
+           filter: grayscale(1)
+        }
+    }
+}
+
+.syndicates-users {
+    width:343px;
+    height:433px;
+    @extend %margin-auto;
+    .syn-user {
+        @extend %opacity-0;
+        @extend %transition-05;
+    }
+    .syn-user-1 {
+        @extend %top-0;
+        @extend %left-0;
+    }
+    .syn-user-2 {
+        top:111px;
+        @extend %left-0;
+    }
+    .syn-user-3 {
+        top:222px;
+        @extend %left-0;
+    }
+    .syn-user-4 {
+        top:333px;
+        @extend %left-0;
+    }
+}
+
+.syn-cols {
+    width:75%;
+    @extend %margin-auto;
+    @include md {
+        width:100%;
+    }
+    h3 {
+        font-size:3.5em;
+        @extend %margin-bottom-30;
+        small {
+            font-size:.7em;
+        }
+        @include lg {
+            font-size:3em;
+        }
+    }
+    p {
+        font-size:1.8em;
+        line-height: 1.65em;
+        @include lg {
+            font-size:1.6em;
+        }
+    }
+}
+
+.syn-cake {
+    width:200px;
+    height:200px;
+    @include transform(translate3d(0,-50%,0));
+    .quarter {
+        width: 100px;
+        height: 100px;
+        @extend %absolute;  
+        @extend %opacity-0;
+        @extend %transition-035;
+    }
+    .circle-top-left{
+        border-radius: 0 0 100px 0;
+        -moz-border-radius: 0 0 100px 0;
+        -webkit-border-radius: 0 0 100px 0;
+    }
+    .circle-top-right{
+         border-radius: 0 0 0 100px;
+         -moz-border-radius: 0 0 0 100px;
+         -webkit-border-radius: 0 0 0 100px;
+    }
+    .circle-bottom-left{
+        border-radius: 0 100px 0 0;
+        -moz-border-radius: 0 100px 0 0;
+        -webkit-border-radius: 0 100px 0 0;
+    }
+    .circle-bottom-right{
+        border-radius: 100px 0 0 0;
+        -moz-border-radius: 100px 0 0 0;
+        -webkit-border-radius: 100px 0 0 0;
+    }
+}
+
+.syn-description {
+    @extend %transition-05;
+    @include transform(scale(0));
+}
+
+.syn-on-complete {
+    .syndicates-users {
+        width:50%;
+        height:auto;
+        .syn-complete {
+            width:200px;
+            height:200px;  
+            @extend %margin-auto;
+        }
+    }
+    .syn-user {
+        @extend %z-index-100;
+        .user-avatar {
+            width:50px;
+        }
+        .flag {
+            width:15px;
+        }
+    }
+    .syn-user-1 {
+        top: 35px;
+        left: 35px;
+    }
+    .syn-user-2 {
+        top: 35px;
+        left:auto;
+        right: 35px;
+    }
+    .syn-user-3 {
+        top:auto;
+        bottom: 35px;
+        right:35px;
+        left:auto;
+    }
+    .syn-user-4 {
+        top:auto;
+        bottom: 35px;
+        left:35px;
+        right:auto;
+    }
+
+    .syn-cols {
+        .item {
+            width:50%;
+            @media only screen and (max-width:580px){
+                width:100%;
+                &:first-child {
+                    margin:0 0 30px 0;
+                }
+            }
+        }
+    }
+
+}
+
+.syn-on {
+    .syn-user-1,
+    .circle-bottom-right {
+      @extend %opacity-1;
+    }
+    .syn-user-2,
+    .circle-bottom-left  {
+        @include transition-delay(.5s);
+        @extend %opacity-1;
+    }
+    .syn-user-3,
+    .circle-top-left {
+        @include transition-delay(1s);
+        @extend %opacity-1;
+    }
+    .syn-user-4,
+    .circle-top-right {
+        @include transition-delay(1.5s);
+        @extend %opacity-1;
+    }
+    
+    .syn-description {
+        @include transition-delay(.5s);
+        @include transform(scale(1));
+    }
+}

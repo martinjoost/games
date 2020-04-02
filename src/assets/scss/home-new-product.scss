@@ -1,0 +1,98 @@
+.home-new-product {
+    height:500px;
+    background-image:url(./assets/images/ltk/sportsf-bg-min.png);
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    @include lg{
+        background-attachment: scroll;
+    }
+    .sports-promo-box {
+        padding:20px 30px;
+        @include borderRadius(8px);
+        h3 {
+            font-size:3em;
+            @extend %line-height-normal;
+        }
+    }
+    .special-txt-wrap {
+        @include transform(translateX(50%));
+        .new-game-special-txt {
+            font-size:10em;
+            opacity:.3;
+            @include animation(pulse, 10s, ease-in-out, 0s, infinite, normal, forwards);
+        }
+    }
+     
+}
+
+.ltk {
+    .home-new-product {
+        .special-txt-wrap {
+            .new-game-special-txt {
+                font-size:10em;
+                @include xlm {
+                    font-size:6em;
+                }
+                @include md {
+                    display:none;
+                }
+            }
+        }
+
+    }
+}
+
+.ltk .standard-section.home-new-product {
+    h2 {
+        @include xlm {
+            font-size:3em;
+        }
+        @media only screen and (max-width:440px){
+            font-size:2.5em;
+        }
+    
+    }
+    .cell {
+        .fright {
+            @include md {
+                position:relative;
+                max-width:340px;
+                width:100%;
+                float:none;
+                margin:0 auto;
+            }
+        }
+    }
+}
+
+
+.ltk .home-new-product {
+    @include sm {
+        height:300px;
+    }
+    .sports-promo-box {
+        h3 {
+            @include xlm {
+                font-size:2.5em;
+            }
+            @include md {
+                text-align:center;
+            }
+            @include sm {
+                font-size:1.8em;
+            }
+        }
+        .button {
+            @include xlm {
+                font-size:2em;
+                height:35px;
+                line-height: 35px;
+            }
+            @include sm {
+                font-size:1.6em;
+            }
+        }
+    }
+}

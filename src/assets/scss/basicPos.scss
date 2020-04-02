@@ -1,0 +1,39 @@
+$basicPos:(
+  top-0:0,
+  top-50p:50%,
+  top--50p:-50%,
+  bottom-0:0,
+  bottom-50p:50%,
+  bottom--50p:-50%,
+  left-0:0,
+  left-50p:50%,
+  left--50p:-50%,
+  right-0:0,
+  right-50p:50%,
+  right--50p:-50%,
+);
+
+@each $name, $bpos in $basicPos{
+  $i: index($basicPos, $name $bpos);
+  @if($i <= 3){
+    %#{$name}{
+      top:$bpos;
+    }
+  }@else if($i == 4 or $i <= 6){
+    %#{$name}{
+      bottom:$bpos;
+    }
+  }@else if($i == 7 or $i <= 9){
+    %#{$name}{
+      left:$bpos;
+    }
+  }@else{
+    %#{$name}{
+      right:$bpos;
+    }
+  }
+ 
+  .#{$name}{
+    @extend %#{$name};
+  }
+} 

@@ -1,0 +1,101 @@
+// transition 
+@mixin transition($property, $duration, $timing, $delay) {
+    @each $prefix in $prefixes {
+        @if($prefix != nth($prefixes, 2)) {
+            #{$prefix + transition}: $property $duration $timing $delay;
+        }
+    }
+    transition: $property $duration $timing $delay;
+}
+  
+@mixin transition-property($property) {
+    @each $prefix in $prefixes {
+        @if($prefix != nth($prefixes, 2)) {
+            #{$prefix + transition-property}: $property;
+        }
+    }
+    transition-property: $property;
+}
+  
+@mixin transition-property-2($property1,$property2) {
+    @each $prefix in $prefixes {
+        @if($prefix != nth($prefixes, 2)) {
+            #{$prefix + transition-property}: $property1, $property2;
+        }
+    }
+    transition-property: $property1, $property2;
+}
+
+@mixin transition-property-3($property1,$property2,$property3) {
+    @each $prefix in $prefixes {
+        @if($prefix != nth($prefixes, 2)) {
+            #{$prefix + transition-property}: $property1, $property2, $property3;
+        }
+    }
+    transition-property: $property1, $property2, $property3;
+}
+  
+@mixin transition-duration($duration) {
+    @each $prefix in $prefixes {
+        @if($prefix != nth($prefixes, 2)) {
+            #{$prefix + transition-duration}: $duration;
+        }
+    }
+    transition-duration: $duration;
+}
+  
+@mixin transition-duration-2($duration1,$duration2) {
+    @each $prefix in $prefixes {
+        @if($prefix != nth($prefixes, 2)) {
+            #{$prefix + transition-duration}: $duration1, $duration2;
+        }
+    }
+    transition-duration: $duration1, $duration2;
+}
+  
+@mixin transition-duration-3($duration1,$duration2,$duration3) {
+    @each $prefix in $prefixes {
+        @if($prefix != nth($prefixes, 2)) {
+            #{$prefix + transition-duration}: $duration1, $duration2, $duration3;
+        }
+    }
+    transition-duration: $duration1, $duration2, $duration3;
+}
+  
+// transition delay
+@mixin transition-delay($delay) {
+    @each $prefix in $prefixes {
+        @if($prefix != nth($prefixes, 2)) {
+            #{$prefix + transition-delay}: $delay;
+        }
+    }
+    transition-delay: $delay;
+}
+
+//presets
+%transition-1 {
+  @include transition(all, 1s, ease-in-out, 0s);
+}
+
+%transition-035 {
+  @include transition(all, .35s, ease-in-out, 0s);
+}
+
+%transition-05 {
+  @include transition(all, .5s, ease-in-out, 0s);
+}
+
+.transition-1 {
+  @extend %transition-1;
+}
+
+.transition-05 {
+  @extend %transition-05;
+}
+
+.transition-035 {
+  @extend %transition-035;
+}
+
+
+  

@@ -1,0 +1,415 @@
+.wt {
+    .home-intro,
+    .home-intro .swiper-container {
+        height:450px!important;
+        @include xmd {
+            height:400px!important;
+        }
+    }
+    .intro-home-slider {
+        h2 {
+            font-size:4em;
+            letter-spacing: 2px;
+            @include xlm {
+                font-size:3em;
+                letter-spacing: 1px;
+            }
+            img {
+                top:6px;
+                left:5px;
+                @include xlm {
+                    top:5px;
+                }
+                @include md {
+                    top:8px;
+                    width:30px;
+                }
+            }
+        }
+        h3 {
+            @include xlm {
+                font-size:3em;
+            }
+            @include xmd {
+                font-size:2.8em;
+            }
+        }
+        .box{
+            @extend %padding-40;
+            box-sizing: border-box;
+            @include lg {
+                padding:30px;
+            }
+            @include md {
+                padding:20px;
+            }
+            &:first-child {
+                width:45%;
+                background: rgba(0,0,0,.5);
+                @include xmd {
+                    width:40%;
+                }
+                @media only screen and (max-width:680px){
+                    position: absolute;
+                    bottom:0;
+                    left:0;
+                    width:100%;
+                    height: auto;
+                    max-height:130px;
+                    text-align:center;
+                }
+                @include md {
+                    padding:10px;
+                }
+            }
+            &:last-child {
+                width:55%;
+                @include xmd {
+                    width:60%;
+                }
+                @media only screen and (max-width:680px){
+                    width:auto;
+                    height:auto;
+                    top:40px;
+                    left:50%;
+                    @include transform(translate3d(-50%,0,0));
+                    padding:10px;
+                }
+            }
+        }
+        .slide-intro-text {
+            font-size:9em;
+            opacity:.6;
+            @include xlm {
+                font-size:8em;
+            }
+            @include lg {
+                font-size:7em;
+            }
+            @include xmd {
+                font-size:6em;
+            }
+            @media only screen and (max-width:880px){
+                font-size:5em;
+            }
+            @include md {
+                font-size:4em;
+            }
+            @include sm {
+                font-size:3em;
+            }
+          
+        }
+        .lotto-title {
+            padding:5px 5px 5px 60px;
+            @extend %bg-normal-3;
+            @include xlm {
+                padding:10px 5px 10px 60px;
+            }
+            @include xmd {
+                font-size:2.5em;
+                letter-spacing: .5px;
+                padding:15px 5px 15px 60px;
+            }
+            @include md {
+                letter-spacing: 0;
+                .lotto-title-line {
+                    display:none;
+                }
+                .lotto-title-country {
+                    font-size:.6em;
+                    display:block;
+                }
+                padding:8px 5px 8px 40px;
+            }
+        }
+    
+        .lotto-title + div  {
+            @extend %padding-10;
+            @extend %inline-block;
+            @include md {
+                display:block;
+                min-width:230px;
+                max-width:250px;
+                padding:8px;
+            }
+            h3, p {
+                text-shadow:0 0 5px rgba(0,0,0,1);
+            }
+            p {
+                font-size:1.6em;
+                @include xmd {
+                    font-size:1.3em;
+                }
+            }
+        }
+      
+        .button.big {
+            @include xmd {
+                height:40px;
+                line-height: 40px;
+            }
+        }   
+    }
+    .home-lotto-slider.standard-section {
+        padding:60px 0 120px 0;
+        @include md {
+            padding:40px 0 100px 0;
+        }
+        @media only screen and (max-width:580px){
+            padding:40px 0 60px 0;
+        }
+        .swiper-container {
+            padding:8px 0;
+        }
+    }
+    .standard-section {
+        h2 {
+            @include md {
+                margin:0 0 40px 0;
+            }
+        }
+    }
+    .home-games-list.standard-section {
+        h2 {
+            @media only screen and (max-width:580px){
+                margin:0 0 30px 0;
+            }
+        }
+    }
+    .home-games-list {
+
+        .iframe-box {
+            background-size:cover!important;
+            @media only screen and (max-width:680px){
+                margin:0 0 20px 0;
+            }
+            @media only screen and (max-width:580px){
+                padding:30px 0;
+            }
+            @include sm {
+                padding:20px 0;
+                margin:0 0 10px 0;
+            }
+            .iframe-game {
+                box-shadow: 0 0 5px rgba(196,167,71,.8);
+            }
+            .iframe-game-cover {
+                background: rgb(0,0,0);
+                background: linear-gradient(360deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 33%, rgba(0,0,0,0) 100%);
+                .iframe-game-text-box {
+                    @media only screen and (max-width:680px){
+                        padding:15px;
+                    }
+                    div {
+                        width:65%;
+                        @media only screen and (max-width:680px){
+                            width:95%;
+                        }
+                        h3 {
+                            font-size:3.5em;
+                            @include xmd {
+                                font-size:3em;
+                            }
+                            @include md {
+                                font-size:2.8em;
+                            }
+                            @media only screen and (max-width:680px){
+                                font-size:2.5em;
+                            }
+                            @media only screen and (max-width:580px){
+                                font-size:2em;
+                            }
+                            @media only screen and (max-width:540px){
+                                font-size:1.8em;
+                                margin:0 0 15px 0;
+                            }
+                            @include sm {
+                                font-size:1.6em;
+                            }
+                        }
+                        p {
+                            font-size:1.6em;
+                            line-height: 1.7em;
+                            @include xmd {
+                                font-size:1.5em;
+                                line-height: 1.6em;
+                            }
+                            @include md {
+                                font-size:1.4em;
+                                line-height: 1.5em;
+                            }
+                            @media only screen and (max-width:680px){
+                                margin:0 0 20px 0;
+                            }
+                            @media only screen and (max-width:540px){
+                                font-size:1.3em;
+                                line-height:1.3em
+                            }
+                            @include sm {
+                                display:none;
+                            }
+                        }
+                        .scratch-info {
+                           @media only screen and (max-width:580px){
+                                margin:0 0 5px 0;
+                           }
+                        }
+                        .table-pay {
+                            font-size:1.3em;
+                            @extend %line-height-normal;
+                            @media only screen and (max-width:580px){
+                                margin:0 0 15px 0;
+                            }
+                            a {
+                                &:hover {
+                                    @extend %normal-6;
+                                    @extend %underline;
+                                }
+                            }
+                           
+                        }
+                    }
+                }
+               
+                
+            }
+            .show-game {
+                height:650px;
+            }
+            .button {
+                @include xmd {
+                    font-size:1.6em;
+                    height:35px;
+                    line-height: 35px;
+                }
+                @media only screen and (max-width:680px){
+                    font-size:1.4em;
+                    height:30px;
+                    line-height: 30px;
+                }
+                @include sm {
+                    font-size:1.2em;
+                    height:25px;
+                    line-height: 25px;
+                }
+               
+            }
+    
+        }
+    
+        .iframe-box.gradientBg {
+            background-size: 400% 400%!important;
+            background: linear-gradient(-45deg, #c20677, #1b0b26, #000000, #6203a1);
+        }
+    
+        .sc-category {
+            h3 {
+                font-size:2.5em;
+                @include xmd {
+                    font-size:2.2em;
+                }
+                @media only screen and (max-width:680px){
+                    font-size:1.8em;
+                }
+            }
+        }
+    
+        .games-categories {
+            @media only screen and (max-width:580px){
+                margin:20px 0 0 0;
+            }
+            .content-wrap {
+                h3 {
+                    margin:40px 0 15px 0;
+                    &:first-child {
+                        @extend %margin-bottom-15;
+                    }
+                    @media only screen and (max-width:580px){
+                        margin:20px 0 15px 0;
+                    }
+                }
+            }
+        }
+    
+    }
+    .home-scratch-cards {
+        background:url(./assets/images/scratch-min.jpg) center 0 no-repeat #ccc; 
+        background-size:cover;
+        background-attachment: fixed;
+        @include lg {
+            background-attachment: scroll;
+        }
+    }
+    .home-casino-games,
+    .home-scratch-cards {
+        h2 {
+            text-shadow:0 0 5px rgba(0,0,0,.5)
+        }
+    }
+    .mat-card {
+        padding:5px;
+        @media only screen and (max-width:680px){
+            padding:2.5px;
+        }
+    }
+    .home-syndicates-promo {
+        .button.md {
+           @include xmd {
+               font-size:2em;
+           }
+        }
+    }
+    .site-safe-items {
+        @media only screen and (max-width:680px){
+            height:auto;
+        }
+        li {
+            @media only screen and (max-width:680px){
+                width:100%;
+                margin:0 0 15px 0;
+            }
+            h3 {
+                @include xmd {
+                    font-size:2.5em;
+                }
+                @include md {
+                    font-size:2em;
+                }
+            }
+            p {
+                @include xmd {
+                    font-size:1.4em;
+                    line-height:1.2em;
+                }
+            }
+        }
+        .mat-card {
+            height:320px;
+            @extend %padding-25;
+            background:rgba(255,255,255,.4);
+            @include xlm {
+                height:380px;
+                padding:20px;
+            }
+            @media only screen and (max-width:680px){
+                height:auto;
+            } 
+        }
+    }
+}
+.syndicates-users {
+    .user-avatar {
+        border:3px solid map-get(map-get($sitePalette, c2), secondary);
+    }
+}
+
+.syn-cake {
+    .quarter {
+        border:1px solid map-get(map-get($sitePalette, c2), secondary);
+        background:map-get(map-get($sitePalette, c7), primary);
+    }
+}
+
+
+

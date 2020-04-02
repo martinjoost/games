@@ -1,0 +1,54 @@
+<section class="home-syndicates standard-section bg-light-2" >
+    <article class="content-wrap txt-center" [ngClass]="{'syn-on-complete' : synAnim1, 'syn-on' : synAnim1}">
+      
+        <div  #user1 class="syn-cols full-width flex row wrap y-items-center">
+            <div class="syn-description relative item">
+                <h3 class="lato weight-500">
+                    Syndicates
+                    <small class="weight-300 block">Feel the adrenaline</small>
+                </h3>
+                <p class="lato weight-400 margin-bottom-20">
+                    A Syndicate is a great way to boost your chances of winning a prize. A Syndicate allows you to buy shares of tickets with other players, which reduces the price of a ticket and increases your chance of winning
+                </p>
+                <button class="button black md">
+                    I want it now
+                </button>
+            </div>
+            <div class="syndicates-users relative transition-035 item" id="syndicates-users" >
+                <div class="syn-complete relative full-width full-height transition-035">
+                    <div class="syn-user syn-user-1 absolute transition-05" id="syn-user-1">
+                        <div class="syn-user-wrap relative-left full-width">
+                            <img class="user-avatar circle transition-05" src="./assets/images/wt/users/20.jpg" width="100"/>
+                            <img class="flag absolute right-0 transition-05" src="./assets/images/wt/flags/007-italy.svg" width="25" height="25"/>
+                        </div>  
+                    </div>
+                    <div #user2 class="syn-user syn-user-2 absolute transition-05" id="syn-user-2">
+                        <div class="syn-user-wrap relative-left full-width">
+                            <img class="user-avatar circle transition-05" src="./assets/images/wt/users/55.jpg" width="100"/>
+                            <img class="flag absolute right-0 transition-05" src="./assets/images/wt/flags/002-united-states.svg" width="25" height="25"/>
+                        </div>  
+                    </div>
+                    <div #user3 class="syn-user syn-user-3 absolute transition-05" id="syn-user-3">
+                        <div class="syn-user-wrap relative-left full-width transition-05">
+                            <img class="user-avatar circle transition-05" src="./assets/images/wt/users/72.jpg" width="100"/>
+                            <img class="flag absolute right-0 transition-05" src="./assets/images/wt/flags/009-canada.svg" width="25" height="25"/>
+                        </div>  
+                    </div>
+                    <div #user4 class="syn-user syn-user-4 absolute transition-05"  id="syn-user-4">
+                        <div class="syn-user-wrap relative-left full-width ">
+                            <img class="user-avatar circle transition-05" src="./assets/images/wt/users/61.jpg" width="100"/>
+                            <img class="flag absolute right-0 transition-05" src="./assets/images/wt/flags/010-mexico.svg" width="25" height="25"/>
+                        </div>  
+                    </div>
+                    <div class="syn-cake absolute top-50p right-0">
+                        <div class="quarter circle-top-left bottom-0 right-0" [ngClass]="[synAnim3 ? 'opacity-1' : 'opacity-0']"></div>
+                        <div class="quarter circle-top-right bottom-0 left-0" [ngClass]="[synAnim4 ? 'opacity-1' : 'opacity-0']"></div>
+                        <div class="quarter circle-bottom-left top-0 right-0" [ngClass]="[synAnim2 ? 'opacity-1' : 'opacity-0']"></div>
+                        <div class="quarter circle-bottom-right top-0 left-0" [ngClass]="[synAnim1 ? 'opacity-1' : 'opacity-0']"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </article>
+</section>

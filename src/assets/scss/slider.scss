@@ -1,0 +1,41 @@
+.swiper-slide {
+    background-size:cover!important;
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+    opacity: .2;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    @extend %light-4;
+    transition: .35s ease-in-out;
+    &:hover {
+        @extend %dark-3;
+    }
+}
+
+.swiper-button-next::after, 
+.swiper-button-prev::after {
+    font-size:35px;
+    @media only screen and (max-width:580px){
+        font-size:30px;
+    }
+}
+
+.ltk .sslide-box-fx2 {
+    .button {
+        @media only screen and (max-width:680px){
+            font-size:1.6em;
+            height:35px;
+            line-height: 35px;
+        }
+        @include sm {
+            font-size:1.4em;
+            height:25px;
+            line-height: 25px;
+            padding:0 20px;
+        }
+    }
+    
+}

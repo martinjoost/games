@@ -1,0 +1,39 @@
+//border radius
+@mixin borderRadius($radius) {
+  @each $prefix in $prefixes {
+      @if($prefix != nth($prefixes, 2)) {
+          #{$prefix + border-radius}: $radius;
+          #{$prefix}border-radius:$radius;
+      }
+  }
+  border-radius: $radius;
+}
+
+@mixin customRadius($top-left, $top-right, $bottom-right, $bottom-left) {
+  @each $prefix in $prefixes {
+      @if($prefix != nth($prefixes, 2)) {
+          #{$prefix + border-radius}: $top-left $top-right $bottom-right $bottom-left;
+      }
+  }
+  border-radius: $top-left $top-right $bottom-right $bottom-left;
+}
+
+//presets
+@for $i from 4 through 10 {
+
+  %border-radius-#{$i}{
+    @include borderRadius(#{$i}px);
+  }
+
+  .border-radius-#{$i}{
+    @extend %border-radius-#{$i};
+  } 
+}
+
+%circle {
+  @include borderRadius(50%);
+}
+
+.circle{
+  @extend %circle;
+}

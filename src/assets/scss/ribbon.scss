@@ -1,0 +1,44 @@
+.ribbon,
+.ribbon span::before{
+  z-index: 1;
+}
+
+.ribbon {
+  @extend %absolute;
+  left: -5px; 
+  top: -5px; 
+  width: 75px; 
+  height: 75px;
+  @extend %overflow-hidden;
+  @extend %txt-right;
+  span {
+    @extend %absolute;
+    top: 19px; left: -21px;
+    width: 100px;
+    font-size: 1em;
+    @extend %roboto;
+    @extend %weight-700;
+    @extend %light-4;
+    @extend %uppercase;
+    @extend %txt-center;
+    line-height: 20px;
+    @include transform(rotate(-45deg));
+    @extend %block;
+    background:red;
+    box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+    &::before,
+    &::after {
+        top: 100%;
+    };
+  }
+  
+}
+
+.ltk .ribbon {
+  span {
+    @extend %light-2;
+    @media only screen and (max-width:580px){
+      font-size:.8em;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.bottom-sheet-content {
+    max-width:600px;
+    h5,
+    p {
+        @extend %line-height-normal;
+    }
+    h5 {
+        font-size:1.7em;
+        @media only screen and (max-width:580px){
+            font-size:1.6em;
+        }
+        @media only screen and (max-width:440px){
+            font-size:1.5em;
+        }
+        @include xsm {
+            font-size:1.4em;
+        }
+        small {
+            font-size:.6em;
+        }
+    }
+    p {
+        font-size:1.2em;
+        @media only screen and (max-width:580px){
+            font-size:1.1em;
+        }
+        @media only screen and (max-width:440px){
+            font-size:1em;
+        }
+    }
+    
+}
+
+.mat-bottom-sheet-container {
+    min-width:100%!important;
+}

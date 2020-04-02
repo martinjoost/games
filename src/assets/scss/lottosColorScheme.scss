@@ -1,0 +1,453 @@
+// colors: lottos, raffles and syndicates
+$lottosPalette:(
+  // 2
+  c2:(
+    primary:#005c96,
+    secondary:#0092ca,
+    tertiary:#00e0f2,
+  ),
+  //3
+  c3:(
+    primary:#aa1218,
+    secondary:#f0252d,
+    tertiary:#ff695e,
+  ),
+  //4
+  c4:(
+    primary:#104278,
+    secondary:#0a78ac,
+    tertiary:#00bfe6,
+  ),
+  //5
+  c5:(
+    primary:#104278,
+    secondary:#0b72a3,
+    tertiary:#00bce6,   
+  ),
+  //6
+  c6:(
+    primary:#5086a8,
+    secondary:#75dec9,
+    tertiary:#a5fab2,   
+  ),
+  //8
+  c7:(
+    primary:#104279,
+    secondary:#0f83ac,
+    tertiary:#00cbf0,
+  ),
+  //11
+  c8:(
+    primary:#03752a,
+    secondary:#00a22e,
+    tertiary:#7befa2,
+  ),
+  //12
+  c9:(
+    primary:#800c11,
+    secondary:#ed1c24,
+    tertiary:#ff584c,
+  ),
+  //13
+  c10:(
+    primary:#0d5e25,
+    secondary:#18a727,
+    tertiary:#53e023,
+  ),
+  //14
+  c11:(
+    primary:#0f4f84,
+    secondary:#0b739f,
+    tertiary:#00c9cb,
+  ),
+  //15
+  c12:(
+    primary:#f67e05,
+    secondary:#ffa300,
+    tertiary:#fcbe00,
+  ),
+  //16
+  c13:(
+    primary:#1269ff,
+    secondary:#419cff,
+    tertiary:#26eaff,
+  ),
+  //19
+  c14:(
+    primary:#0e922a,
+    secondary:#0fa82e,
+    tertiary:#13e437,
+  ),
+  //20
+  c15:(
+    primary:#d12800,
+    secondary:#ff8315,
+    tertiary:#ffdb15,  
+  ),
+  //21
+  c16:(
+    primary:#d16200,
+    secondary:#ff8a15,
+    tertiary:#ffdb15,
+  ),
+  //22
+  c17:(
+    primary:#78b01f,
+    secondary:#82cb62,
+    tertiary:#53dde8,
+  ),
+  //23
+  c18:(
+    primary:#6200a6,
+    secondary:#bb00b5,
+    tertiary:#ff24d3,
+  ),
+  //24
+  c19:(
+    primary:#033d48, 
+    secondary:#0f7e99,
+    tertiary:#15d0ff,
+  ),
+  //32
+  c20:(
+    primary:#865200,
+    secondary:#d9bf00,
+    tertiary:#d9e021,
+  ),
+  //33
+  c21:(
+    primary:#b02236,
+    secondary:#d64d5b,
+    tertiary:#ff6394,
+  ),
+  //34
+  c22:(
+    primary:#260d83,
+    secondary:#523fb2,
+    tertiary:#9282f1,
+  ),
+  //38
+  c23:(
+    primary:#4f24b5,
+    secondary:#8352e3,
+    tertiary:#839bff,
+  ),
+  //39
+  c24:(
+    primary:#930089,
+    secondary:#c63cb3,
+    tertiary:#ff31d1,
+  ),
+  //41
+  c25:(
+    primary:#5b0c6e,
+    secondary:#700989,
+    tertiary:#ac2eaf,
+  ),
+  //xx
+  c26:(
+    primary:#ffcf00,
+    secondary:#fff300,
+    tertiary:#ffff00,
+  ),
+  //r1
+  c27:(
+    primary:#4c50ab,
+    secondary:#7171c2,
+    tertiary:#9babff,
+  ),
+  //r4
+  c28:(
+    primary:#c64200,
+    secondary:#dd6522,
+    tertiary:#e5863e,
+  ),
+  //r5
+  c29:(
+    primary: #aa1218,
+    secondary:#f22b34,
+    tertiary:#ff555e,
+  ),
+  //r8
+  c30:(
+    primary:#123da7,
+    secondary:#2e72ff,
+    tertiary:#14beff
+  ) 
+);
+
+@function setcolor($color, $tone: primary) {
+    @return map-get(map-get($lottosPalette, $color), $tone);
+}
+
+@mixin lottosPalette($k){
+   
+    %normal-product-#{$k} {
+      color: setcolor(c#{$k}, primary);
+    };
+    %dark-product-#{$k} {
+      color: setcolor(c#{$k}, secondary);
+    };
+    %light-product-#{$k} {
+      color: setcolor(c#{$k}, tertiary);
+    };
+    %path-fill-product-#{$k} {
+      fill: setcolor(c#{$k}, primary);
+    }
+    %bg-product-#{$k},
+    %bgg-product-#{$k},
+    %bgg-product-#{$k}-left {
+      background: setcolor(c#{$k}, primary);
+    };
+    %bgg-product-#{$k} {
+      background: linear-gradient(to bottom, setcolor(c#{$k}, primary) 0%, setcolor(c#{$k}, secondary) 50%, setcolor(c#{$k}, tertiary) 100%);
+    };
+    %bgg-product-#{$k}-left {
+      background: linear-gradient(to right, setcolor(c#{$k}, primary) 0%, setcolor(c#{$k}, secondary) 50%, setcolor(c#{$k}, tertiary) 100%);
+    };
+    %border-product-#{$k}{
+      border-color:setcolor(c#{$k}, primary);
+    };
+}
+
+// lotto colors set
+@for $i from 2 through 6 {
+
+  @include lottosPalette($i);
+  .normal-product-#{$i}{
+    @extend %normal-product-#{$i};
+  }
+  .light-product-#{$i}{
+    @extend %light-product-#{$i};
+  }
+  .dark-product-#{$i}{
+    @extend %dark-product-#{$i};
+  }
+
+  .path-fill-product-#{$i}{
+    @extend %path-fill-product-#{$i}
+  }
+
+  .bg-product-#{$i} {
+    @extend %bg-product-#{$i};
+  }
+  .bgg-product-#{$i} {
+    @extend %bgg-product-#{$i};
+  }
+  .bgg-left-product-#{$i} {
+    @extend %bgg-product-#{$i}-left;
+  }
+  .border-color-product-#{$i}{
+    @extend %border-product-#{$i};
+  }
+
+}
+
+// l7
+.normal-product-7{
+  @extend %normal-product-5;
+}
+.light-product-7{
+  @extend %light-product-5;
+}
+.path-fill-product-7 {
+  @extend %path-fill-product-5;
+}
+.dark-product-7{
+  @extend %dark-product-5;
+}
+.bg-product-7 {
+  @extend %bg-product-5;
+}
+.bgg-product-7 {
+  @extend %bgg-product-5;
+}
+.bgg-left-product-7 {
+  @extend %bgg-product-5-left;
+}
+.border-color-product-7{
+  @extend %border-product-5;
+}
+
+// l8
+@include lottosPalette(7);
+.normal-product-8{
+  @extend %normal-product-7;
+}
+.light-product-8{
+  @extend %light-product-7;
+}
+.dark-product-8{
+  @extend %dark-product-7;
+}
+.bg-product-8 {
+  @extend %bg-product-7;
+}
+.bgg-product-8 {
+  @extend %bgg-product-7;
+}
+.bgg-left-product-8 {
+  @extend %bgg-product-7-left;
+}
+.border-color-product-8{
+  @extend %border-product-7;
+}
+
+// l9 and l26
+.normal-product-9,
+.normal-product-26,
+.normal-product-r-5,
+.normal-product-r-syn-220,
+.normal-product-syn-3,
+.normal-product-syn-26,
+.normal-product-syn-158,
+.normal-product-syn-192,
+.normal-product-syn-198,
+.normal-product-syn-10013{
+  @extend %normal-product-3;
+}
+.light-product-9,
+.light-product-26,
+.light-product-r-5,
+.light-product-r-syn-220,
+.light-product-syn-3,
+.light-product-syn-26,
+.light-product-syn-158,
+.light-product-syn-192,
+.light-product-syn-198,
+.light-product-syn-10013{
+  @extend %light-product-3;
+}
+.dark-product-9,
+.dark-product-26,
+.dark-product-r-5,
+.dark-product-r-syn-220,
+.dark-product-syn-3,
+.dark-product-syn-26,
+.dark-product-syn-158,
+.dark-product-syn-192,
+.dark-product-syn-198,
+.dark-product-syn-10013{
+  @extend %dark-product-3;
+}
+.bg-product-9,
+.bg-product-26,
+.bg-product-r-5,
+.bg-product-r-syn-220
+.bg-product-syn-3,
+.bg-product-syn-26,
+.bg-product-syn-158,
+.bg-product-syn-192,
+.bg-product-syn-198,
+.bg-product-syn-10013 {
+  @extend %bg-product-3;
+}
+.bgg-product-9,
+.bgg-product-26,
+.bgg-product-r-5,
+.bgg-product-r-syn-220,
+.bgg-product-syn-3,
+.bgg-product-syn-26,
+.bgg-product-syn-158,
+.bgg-product-syn-192,
+.bgg-product-syn-198,
+.bgg-product-syn-10013  {
+  @extend %bgg-product-3;
+}
+.bgg-left-product-9,
+.bgg-left-product-26,
+.bgg-left-r-product-5,
+.bgg-left-r-syn-product-220,
+.bgg-left-syn-product-3,
+.bgg-left-syn-product-26,
+.bgg-left-syn-product-158,
+.bgg-left-syn-product-192,
+.bgg-left-syn-product-198,
+.bgg-left-syn-product-10013  {
+  @extend %bgg-product-3-left;
+}
+.border-color-product-9,
+.border-color-product-26,
+.border-color-r-product-5,
+.border-color-r-syn-product-220,
+.border-color-syn-product-3,
+.border-color-syn-product-26,
+.border-color-syn-product-158,
+.border-color-syn-product-192,
+.border-color-syn-product-198,
+.border-color-syn-product-10013 {
+  @extend %border-product-3;
+}
+
+//l11 to l16
+@for $i from 8 through 13 {
+  $k:$i - 7 + 10;
+  @include lottosPalette($i);
+  .normal-product-#{$k}{
+    @extend %normal-product-#{$i};
+  }
+  .light-product-#{$k}{
+    @extend %light-product-#{$i};
+  }
+  .dark-product-#{$k}{
+    @extend %dark-product-#{$i};
+  }
+  .bg-product-#{$k} {
+    @extend %bg-product-#{$i};
+  }
+  .bgg-product-#{$k} {
+    @extend %bgg-product-#{$i};
+  }
+  .bgg-left-product-#{$k} {
+    @extend %bgg-product-#{$i}-left;
+  }
+  .border-color-product-#{$k}{
+    @extend %border-product-#{$i};
+  }
+}
+
+// l17
+.normal-product-17{
+  @extend %normal-product-5;
+}
+.light-product-17{
+  @extend %light-product-5;
+}
+.dark-product-17{
+  @extend %dark-product-5;
+}
+.bg-product-17 {
+  @extend %bg-product-5;
+}
+.bgg-product-17 {
+  @extend %bgg-product-5;
+}
+.bgg-left-product-17 {
+  @extend %bgg-product-5-left;
+}
+.border-color-product-17{
+  @extend %border-product-5;
+}
+
+//l18
+.normal-product-18{
+  @extend %normal-product-10;
+}
+.light-product-18{
+  @extend %light-product-10;
+}
+.dark-product-18{
+  @extend %dark-product-10;
+}
+.bg-product-18 {
+  @extend %bg-product-10;
+}
+.bgg-product-18 {
+  @extend %bgg-product-10;
+}
+.bgg-left-product-18 {
+  @extend %bgg-product-10-left;
+}
+.border-color-product-18{
+  @extend %border-product-10;
+}

@@ -1,0 +1,161 @@
+.wt {
+    .login-box {
+
+        .mat-icon-button {
+            @extend %absolute;
+        }
+        h3 {
+            font-size:2.3em;
+            small {
+                font-size:50%;
+                .link {
+                    margin:0 2.5px 0 0;
+                }
+            }
+        }
+        .login-logo img,
+        .login-content-social a img {
+            @include transform(translate3d(0,-50%,0))
+        }
+        .login-logo {
+            width:75px;
+            height:75px;
+            border:3px solid rgba(255,255,255,.5);
+            img {
+                @extend %relative;
+                width:40px;
+                @extend %top-50p;  
+            }
+        }
+        .login-promo-wrap {
+            width:55%;
+            background:url(./assets/images/wt/loginBg3-min.jpg) center 25% no-repeat map-get(map-get($sitePalette, c5), light);;
+            background-size:cover;
+            @include animation(inDown, .5s, ease-in-out, .22s, 1, normal, forwards);
+            @include xmd {
+               width:50%
+            }
+            @media only screen and (max-width:800px) {
+                display:none;
+            }
+            .login-promo-content {
+                opacity:.8;
+                h4 {
+                    @include animationDelay(.8s);
+                    @include animationDuration(2s);
+                    font-size:4em;
+                    @include xmd {
+                        font-size:3em;
+                    }
+                    small {
+                        font-size:.6em;
+                    }
+                }
+            }
+        }
+        .login-content-wrap {
+            width:45%;
+            @include lg {
+                padding:10px;
+            }
+            @include xmd {
+                width:50%;
+            }
+            @media only screen and (max-width:800px) {
+                width:100%;
+            }
+            .flex-item {
+                width:70%;
+
+                @include xlm {
+                    width:80%;
+                }
+                @media only screen and (max-width:890px){
+                    width:90%;
+                }
+                @media only screen and (max-width:800px){
+                    width:75%;
+                }
+                @include smd {
+                    width:80%;
+                }
+                @include sm {
+                    width:95%;
+                }
+            }
+            .login-content-social-hr p,
+            .login-register p,
+            .login-error-msg {
+                font-size:1.4em;
+            }
+    
+            .login-content-social-hr {
+                p { 
+                    top:1px;
+                    @extend %weight-300;
+                    @include transform(translate3d(-50%,0,0));
+                }
+            }
+            .login-content-social {
+                a {
+                    width:50px;
+                    height:50px;
+                    background:#f7f6f6;
+                    box-shadow: 0 0 2px rgba($color: #000000, $alpha: .3);
+                    &:hover {
+                        @extend %bg-light-2;
+                        box-shadow: 0 0 4px rgba($color: #000000, $alpha: .3);
+                    }
+                }
+            }
+            .login-error-msg {
+                bottom:-15px;
+                @extend %light-5;
+            }
+    
+            .form-note {
+                @extend %top--5;
+            }
+    
+            form {
+                .mat-form-field-suffix {
+                    .mat-icon {
+                        @extend %pointer;
+                    }
+                }
+            }
+    
+        }
+
+        .forgot-pass-fp {
+            font-size:1.2em;
+            margin:15px 0 5px 0;
+        }
+
+        .forgot-pass-p {
+            font-size:1.4em;
+        }
+
+        .back-arrow {
+            top:19px;
+            left:55%;
+            @include transform(translate3d(0,0,0));
+            @extend %margin-left-20;  
+            &:hover {
+                @include transform(translate3d(-20%,0,0));
+            };
+            @include xmd {
+                left:50%;
+             }
+             @include smd {
+                 left:20px;
+                 margin:0;
+             }
+        }
+
+    }
+   
+}
+
+
+

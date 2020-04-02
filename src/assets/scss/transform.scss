@@ -1,0 +1,21 @@
+// transform
+@mixin transform($transform) {
+  @each $prefix in $prefixes {
+    #{$prefix + transform}: $transform;
+  }
+  transform: $transform;
+}
+
+@mixin transform-2($transform-1, $transform-2) {
+  @each $prefix in $prefixes {
+    #{$prefix + transform}:$transform-1 $transform-2;
+  }
+  transform: $transform-1 $transform-2;
+}
+
+@mixin transform-3($transform-1, $transform-2,  $transform-3) {
+  @each $prefix in $prefixes {
+    #{$prefix + transform}:$transform-1 $transform-2 $transform-3;
+  }
+  transform: $transform-1 $transform-2 $transform-3;
+}

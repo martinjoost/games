@@ -1,0 +1,278 @@
+$flexContainer:();
+$inlineFlexContainer:();
+$flexDirection: ( 
+  row:row, 
+  row-reverse:row-reverse, 
+  column:column, 
+  column-reverse:column-reverse, 
+);
+$flexFlow:(
+  row:row nowrap, 
+  row-reverse:row-reverse nowrap, 
+  row-wrap:row wrap, 
+  row-reverse-wrap:row-reverse wrap, 
+  column:column nowrap, 
+  column-reverse:column-reverse nowrap, 
+  column-wrap:column wrap, 
+  column-reverse-wrap:column-reverse wrap, 
+);
+$flexWrapPos: ( 
+  stretch:stretch,
+  start:flex-start, 
+  end:flex-end, 
+  center:center, 
+  space-around:space-around,
+  space-between:space-between,
+  baseline:baseline,
+);
+$flexBasis: ( 
+  auto:auto,
+  fill:fill, 
+  max-content:max-content, 
+  min-content:min-content, 
+  fit-content:fit-content,
+);
+
+//flexContainer
+@each $prefix in $prefixes {
+    @if($prefix == nth($prefixes, 1) or $prefix == nth($prefixes, 3)){
+      $flexContainer: append($flexContainer, #{$prefix + box});
+      $flexContainer: append($flexContainer, #{$prefix + flex});
+  
+      $inlineFlexContainer: append($inlineFlexContainer, #{$prefix + inline-box});
+      $inlineFlexContainer: append($inlineFlexContainer, #{$prefix + inline-flex});
+  
+    }@else {
+      $flexContainer: append($flexContainer, #{$prefix + flexbox});
+  
+      $inlineFlexContainer: append($inlineFlexContainer, #{$prefix + inline-flexbox});
+    }
+  }
+  $flexContainer: append($flexContainer, flex);
+  $inlineFlexContainer: append($inlineFlexContainer, inline-flex);
+  @mixin flexbox {
+    @each  $val in $flexContainer{
+      $i: index($flexContainer, $val);
+        display: $val;
+      }
+  } 
+  @mixin inlineFlexbox {
+    @each  $val in $inlineFlexContainer{
+      $i: index($inlineFlexContainer, $val);
+        display: $val;
+      }
+  }
+  
+  //flex direction
+  @mixin flexDirection($dir){
+    @each $name, $val in $flexDirection{
+      $i: index($flexDirection, $name $val);
+        @if($dir == 'row'){
+          @if($i < 2){
+            flex-direction:#{$val}
+          }
+        }@else if($dir == 'row-reverse'){
+          @if($i == 2){
+            flex-direction:#{$val}
+          }
+        }@else if ($dir == 'column'){
+          @if($i == 3){
+            flex-direction:#{$val}
+          }
+        }@else {
+          @if($i > 3){
+            flex-direction:#{$val}
+          }
+        }
+    }
+}
+  
+//flex flow
+@mixin flexFlow($dir, $wrap){
+@each $name, $val in $flexFlow{
+    $i: index($flexFlow, $name $val);
+    @if($dir == 'row' and $wrap == 'nowrap'){
+        @if($i < 2){
+        flex-flow:#{$val}
+        }
+    }@else if($dir == 'row-reverse' and $wrap == 'nowrap'){
+        @if($i == 2){
+        flex-flow:#{$val}
+        }
+    }@else if ($dir == 'row' and $wrap == 'wrap'){
+        @if($i == 3){
+        flex-flow:#{$val}
+        }
+    }@else if ($dir == 'row-reverse' and $wrap == 'wrap'){
+        @if($i == 4){
+        flex-flow:#{$val}
+        }
+    }@else if($dir == 'column' and $wrap == 'nowrap'){
+        @if($i == 5){
+        flex-flow:#{$val}
+        }
+    }@else if($dir == 'column-reverse' and $wrap == 'nowrap'){
+        @if($i == 6){
+        flex-flow:#{$val}
+        }
+    }@else if($dir == 'column' and $wrap == 'wrap'){
+        @if($i == 7){
+        flex-flow:#{$val}
+        }
+    }@else {
+        @if($i > 7){
+        flex-flow:#{$val}
+        }
+    }
+}
+}
+
+// flex .basis
+@mixin customFlexBasis($val){
+flex-basis:$val;
+}
+
+//flexbox implement
+//flex container
+%flexbox {@include flexbox;}
+%inlineFlexbox {@include inlineFlexbox;}
+.flex,
+.fcols {
+  @extend %flexbox;
+}
+.flex.inline,
+.cols.inline {
+  @extend %inlineFlexbox;
+}
+%flexRowNowrap {@include flexFlow(row, nowrap);}
+%flexRowReverseNowrap {@include flexFlow(row-reverse, nowrap);}
+%flexRowWrap {@include flexFlow(row, wrap);}
+%flexRowReverseWrap {@include flexFlow(row-reverse, wrap);}
+.row {
+  @extend %flexRowNowrap;
+}
+.row.reverse {
+  @extend %flexRowReverseNowrap;
+}
+.row.wrap {
+  @extend %flexRowWrap;
+}
+.row.reverse.wrap {
+  @extend %flexRowReverseWrap;
+}
+%flexColumnNowrap {@include flexFlow(column, nowrap);}
+%flexColumnReverseNowrap {@include flexFlow(column-reverse, nowrap);}
+%flexColumnWrap {@include flexFlow(column, wrap);}
+%flexColumnReverseWrap {@include flexFlow(column-reverse, wrap);}
+.column {
+  @extend %flexColumnNowrap;
+}
+.column.reverse {
+  @extend %flexColumnReverseNowrap;
+}
+.column.wrap {
+  @extend %flexColumnWrap;
+}
+.column.reverse.wrap {
+  @extend %flexColumnReverseWrap;
+}
+
+//flex justify
+@each $name, $val in $flexWrapPos{
+  $i: index($flexWrapPos, $name $val);
+  @if($i < 5){
+    %x-content-#{$name}{
+      justify-content: $val;
+    }
+    .x-content-#{$name}{
+      @extend %x-content-#{$name};
+    }
+
+    %y-content-#{$name}{
+      align-content:$val; 
+    }
+
+    .y-content-#{$name}{
+      @extend %y-content-#{$name};
+    }
+
+    %y-items-#{$name}{
+      align-items:$val; 
+    }
+
+    .y-items-#{$name}{
+      @extend %y-items-#{$name};
+    }
+    
+    %item-self-#{$name}{
+      align-self:$val; 
+    }
+
+    .item-self-#{$name}{
+      @extend %item-self-#{$name};
+    }
+
+  }@else if($i == 5 or $i == 6){
+    %#{$name}{
+      justify-content: $val;
+    }
+    .#{$name}{
+      @extend %#{$name};
+    }
+    /*%x-content-#{$name}{
+      justify-content: $val;
+    }
+    .x-content-#{$name}{
+      @extend %x-content-#{$name};
+    }*/
+  }@else{
+    %y-items-#{$name}{
+      align-items:$val; 
+    }
+
+    .y-items-#{$name}{
+      @extend %y-items-#{$name};
+    }
+
+    %item-self-#{$name}{
+      align-self:$val; 
+    }
+
+    .item-self-#{$name}{
+      @extend %item-self-#{$name};
+    }
+  } 
+}
+
+//flex order
+@for $i from 1 through 8 {
+  .order-#{$i}{
+    order:#{$i};
+  }
+}
+
+@for $i from 0 through 6 {
+  .grow-#{$i}{
+    flex-grow:#{$i}
+  }
+
+  .shrink-#{$i}{
+    flex-shrink:#{$i}
+  }
+
+}
+
+// flex basis
+@each $name, $val in $flexBasis{
+  %basis-#{$name}{
+    flex-basis:#{$val};
+  }
+
+  .basis-#{$name}{
+    @extend %basis-#{$name};
+  }
+}
+
+.flex-auto-panel {
+  flex:1 1 auto;
+}

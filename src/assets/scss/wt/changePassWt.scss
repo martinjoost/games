@@ -1,0 +1,15 @@
+.wt {
+    .standard-section.account {
+        .change-pass-wrap {
+            h3 {
+                font-size:2.2em;
+                @extend %line-height-normal;
+            }
+        }
+    }
+    .change-pass-form-wrap {
+        .button {
+            margin:35px 0 0 0!important;
+        }
+    }
+}

@@ -1,0 +1,129 @@
+// colors
+$palette:(
+  c1:(
+    tnormal:#b00731,
+    tlight:#e84c5a,
+    tdark:#79000b,
+  ),
+  c2:(
+    tnormal:#d81b60,
+    tlight:#ff5c8d,
+    tdark:#a00037,
+  ),
+  c3:(
+    tnormal:#00d7e4,
+    tlight:#68ffff,
+    tdark:#00a5b2,
+  ),
+  c4: (
+    tnormal:#333333,
+    tlight:#e6e6e2,
+    tdark:#0c0c0c,
+  ),
+  c5: (
+    tnormal:#c1c1c1,
+    tlight:#ffffff,
+    tdark:#aaaaaa,
+  ),
+  c6: (
+    tnormal:#282828,
+    tlight:#666,
+    tdark:#000000,
+  )
+
+);
+
+@function setcolor($color, $tone: tnormal) {
+  @return map-get(map-get($palette, $color), $tone);
+}
+
+@mixin pallete($k){
+   
+    %normal-c#{$k} {
+      color: setcolor(c#{$k}, tnormal);
+    };
+    .normal-c#{$k} {
+      @extend %normal-c#{$k};
+    };
+    %light-c#{$k} {
+      color: setcolor(c#{$k}, tlight);
+    };
+    .light-c#{$k} {
+      @extend %light-c#{$k};
+    };
+    %dark-c#{$k} {
+      color: setcolor(c#{$k}, tdark);
+    };
+    .dark-c#{$k} {
+      @extend %dark-c#{$k};
+    };
+    %bg-normal-c#{$k}{
+      background: setcolor(c#{$k}, tnormal);
+    };
+    .bg-normal-c#{$k}{
+      @extend %bg-normal-c#{$k};
+    };
+    %bg-light-c#{$k}{
+      background: setcolor(c#{$k}, tlight);
+    };
+    .bg-light-c#{$k}{
+      @extend %bg-light-c#{$k};
+    };
+    %bg-dark-c#{$k}{
+      background: setcolor(c#{$k}, tdark);
+    };
+    .bg-dark-c#{$k}{
+      @extend %bg-dark-c#{$k}
+    };
+    %border-normal-c#{$k}{
+      border-color:setcolor(c#{$k}, tnormal);
+    };
+    .border-normal-c#{$k}{
+      @extend %border-normal-c#{$k};
+    };
+    %border-light-c#{$k}{
+      border-color:setcolor(c#{$k}, tlight);
+    };
+    .border-light-c#{$k}{
+      @extend %border-light-c#{$k};
+    };
+    %border-dark-c#{$k}{
+      border-color:setcolor(c#{$k}, tdark);
+    };
+    .border-dark-c#{$k}{
+      @extend %border-dark-c#{$k};
+    };
+}
+
+// colors set
+@for $i from 1 through 6 {
+
+  @include pallete($i);
+  .normal-#{$i}{
+    @extend %normal-c#{$i};
+  }
+  .light-#{$i}{
+    @extend %light-c#{$i};
+  }
+  .dark-#{$i}{
+    @extend %dark-c#{$i};
+  }
+  .bg-normal-#{$i} {
+    @extend %bg-normal-c#{$i};
+  }
+  .bg-light-#{$i} {
+    @extend %bg-light-c#{$i};
+  }
+  .bg-dark-#{$i} {
+    @extend %bg-dark-c#{$i};
+  }
+  .border-normal-#{$i} {
+    @extend %border-normal-c#{$i};
+  }
+  .border-light-#{$i} {
+    @extend %border-light-c#{$i};
+  }
+  .border-dark-#{$i} {
+    @extend %border-dark-c#{$i};
+  }
+}

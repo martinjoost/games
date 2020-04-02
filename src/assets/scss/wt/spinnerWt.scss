@@ -1,0 +1,6 @@
+.global-spinner{
+    .mat-progress-spinner.mat-accent circle,
+    .mat-progress-spinner circle, .mat-spinner circle {
+      stroke: map-get(map-get($sitePalette, c1), primary);
+    }
+}

@@ -1,0 +1,80 @@
+
+.mat-input-element,
+.mat-form-field-label-wrapper {
+    font-size:14px!important;
+}
+.mat-form-field-appearance-legacy .mat-form-field-prefix .mat-icon {
+    width:1.3em!important;
+}
+
+.mat-form-field-prefix,
+.mat-form-field-suffix {
+    top:4px;
+}
+
+.mat-slide-toggle-content,
+.mat-error {
+    font-size:1.2em;
+}
+
+.mat-slide-toggle-bar {
+    width:30px!important;
+    height:10px!important;
+}
+
+.mat-slide-toggle-thumb-container,
+.mat-slide-toggle-thumb {
+    width:15px!important;
+    height:15px!important;
+}
+
+
+%ultra-gray {
+    color:#a3a3a3;
+}
+.ultra-gray {
+    @extend %ultra-gray;
+}
+
+//stepper-box 
+.stepper-box {
+    min-height: 250px;
+}
+
+.mat-span-prefix {
+    top:-3px;
+    font-size:1.4em;
+    @extend %line-height-normal;
+}
+
+//boxes
+.two-boxes,
+.three-boxes {
+    .box {
+        margin:0 4% 0 0;
+    }
+}
+
+.two-boxes {
+    .box {
+        width:48%;   
+        &:nth-child(2n) {
+            @extend %margin-none;
+        }
+    }
+}
+
+.three-boxes {
+    .box {
+        width:30.6%;
+        &:nth-child(3n) {
+            @extend %margin-none;
+        }
+        @include md {
+            width:100%;
+            margin:0;
+        }
+    }
+   
+}
+

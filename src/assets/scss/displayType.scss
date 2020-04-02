@@ -1,0 +1,30 @@
+$displayType:(
+  none:none,
+  block:block,
+  inline-block:inline-block,
+  dtable:table,
+  dcell:table-cell,
+  va-baseline:baseline,
+  va-top:top,
+  va-middle:middle,
+  va-bottom:bottom
+);
+@each $name, $display in $displayType{
+
+    $i: index($displayType, $name $display);
+  
+    @if($i <= 5){
+      %#{$name}{
+        display:$display;
+      }
+    }@else{
+      %#{$name}{
+        vertical-align:$display;
+      }
+    }
+  
+    .#{$name}{
+      @extend %#{$name};
+    }
+}
+  

@@ -1,0 +1,46 @@
+@mixin bgOpacity($red, $green, $blue, $opacity){
+  background:rgba($red, $green, $blue, $opacity);
+}
+
+//presets
+%opacity-0 {
+  opacity: 0;
+}
+
+%opacity-1 {
+  opacity: 1;
+}
+
+%bg-transparent {
+  background: transparent;
+}
+
+%bg-transparent-important {
+  background: transparent!important;
+}
+
+//oapcity bg - presets
+%opacity-box-dark {
+  @include bgOpacity(0, 0, 0, .9);
+}
+%opacity-box-white {
+  @include bgOpacity(255, 255, 255, .8);
+}
+.opacity-box-dark {
+  @extend %opacity-box-dark;
+}
+.opacity-box-white {
+  @extend %opacity-box-white;
+}
+
+.bg-transparent {
+  @extend %bg-transparent;
+}
+
+.opacity-0 {
+  @extend %opacity-0;
+}
+
+.opacity-1 {
+  @extend %opacity-1;
+}

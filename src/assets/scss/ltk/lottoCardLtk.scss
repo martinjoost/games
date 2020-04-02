@@ -1,0 +1,13 @@
+.ltk {
+    .home-lotto-slider {
+        &:hover {
+            .mat-card.lotto-card{
+                @include transform(scale(1.05));
+            }
+            .button {
+                @extend %bg-dark-9;
+            }
+        }
+    }
+    
+}

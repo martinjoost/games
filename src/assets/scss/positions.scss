@@ -1,0 +1,27 @@
+$positions: (
+  static:static,
+  fixed:fixed,
+  relative:relative,
+  absolute:absolute,
+  fleft:left,
+  fright:right,
+  fnone:none
+);
+// positions
+@each $name, $pos in $positions{
+
+    $i: index($positions, $name $pos);
+    @if ($i < 5){
+      %#{$name}{
+        position:$pos;
+      }
+    }@else {
+      %#{$name}{
+        float:$pos;
+      }
+    }
+    .#{$name}{
+      @extend %#{$name};
+    }
+} 
+  

@@ -1,0 +1,18 @@
+<div>
+    <app-intro [sys]="wt"></app-intro>
+    <app-home-lotto-slider [sys]="wt"></app-home-lotto-slider>
+    <app-casino-games [sys]="wt"></app-casino-games>
+    <ng-container *ngIf="wt">
+        <app-promo-box></app-promo-box>
+    </ng-container>
+    <ng-container *ngIf="!wt">
+       <app-new-product></app-new-product>
+    </ng-container>
+    <app-scratch-cards [sys]="wt"></app-scratch-cards>
+    <ng-container *ngIf="wt">
+        <app-syndicates></app-syndicates>
+    </ng-container>
+    <ng-container *ngIf="wt">
+        <app-site-safe></app-site-safe>
+    </ng-container>
+</div>

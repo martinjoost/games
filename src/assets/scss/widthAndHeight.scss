@@ -1,0 +1,43 @@
+//width and height
+@for $i from 1 through 5 {
+  @if ($i < 5){
+    $k: $i * 25;
+    %width-#{$k}-percent{
+      width:#{$k+$percent};
+    };
+    %height-#{$k}-percent{
+      height:#{$k+$percent};
+    };
+    .width-#{$k}-percent {
+      @extend %width-#{$k}-percent;
+    }
+    .height-#{$k}-percent {
+      @extend %height-#{$k}-percent;
+    }
+    %vh-#{$k}{
+      height:#{$k}vh;
+    };
+    .vh-#{$k} {
+      @extend %vh-#{$k};
+    }   
+    %vw-#{$k}{
+      width:#{$k}vw;
+    };
+    .vw-#{$k} {
+      @extend %vw-#{$k};
+    }      
+  }@else {
+    %width-auto {
+      width:auto;
+    };
+    %height-auto {
+      height:auto;
+    }
+    .width-auto {
+      @extend %width-auto;
+    }
+    .height-auto {
+      @extend %height-auto;
+    }
+  } 
+}

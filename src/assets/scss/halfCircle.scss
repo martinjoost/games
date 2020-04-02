@@ -1,0 +1,21 @@
+// half circle
+@mixin halfCircle($direction, $size){
+  $csize:$size * 2;
+  @if($direction == 'left'){
+    width: $size;
+    height: $csize;
+    border-radius: $csize 0 0 $csize;
+  }@else if($direction == 'right'){
+    width: $size;
+    height: $csize;
+    border-radius: 0 $csize $csize 0;
+  }@else if($direction == 'top'){
+    width: $csize;
+    height: $size;
+    border-radius: $csize $csize 0 0; 
+  }@else{
+    width: $csize;
+    height: $size;
+    border-radius: 0 0 $csize $csize;
+  }
+}

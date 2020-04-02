@@ -1,0 +1,188 @@
+
+.cover-fx2 {
+    background:rgba(0,0,0,0);
+    @include transform-2(scale(0), skew(2deg, -20deg));
+    @extend %transition-035;
+    .button {
+        @extend %inline-block;
+        @include transform(scale(1.5));
+        @include transition(all, .15s, ease-in-out, .30s);
+    }
+        
+}
+
+.sslide-box-fx2 {
+    .cover-fx,
+    .cover-fx2 .button {
+        @extend %opacity-0; 
+    } ;
+   
+    &:hover .cover-fx2,
+    &:hover .cover-fx2 .button{
+         @extend %opacity-1;
+    };
+       
+    &:hover {
+        .cover-fx2 {
+            @extend %opacity-1;
+            background:rgba(0,0,0,.7);
+            @include transform-2(scale(1), skew(0, 0));
+        };
+        .button {
+            @include transform(scale(1));
+        }
+    }
+
+}
+
+.cover-fx3 {
+    @include transform-2(scale(0), skew(-50deg, -50deg));
+    transform-origin: center bottom;
+    @extend %transition-035;
+    .cell {
+        @include transition(all, .25s, ease-in-out, .30s);
+        .play-now-main {
+            font-size:6em;
+            opacity:.9;
+            @include xmd {
+                font-size:5em;
+            }
+            @include md  {
+                font-size:3.8em;
+            }
+            @media only screen and (max-width:680px){
+                font-size:4.5em;
+            }
+            @media only screen and (max-width:540px){
+                font-size:4em;
+            }
+            @media only screen and (max-width:500px){
+                font-size:3em;
+            }
+            @media only screen and (max-width:440px){
+                font-size:2.7em;
+            }
+            @media only screen and (max-width:360px){
+                font-size:2.5em;
+            }
+            @media only screen and (max-width:340px){
+                font-size:2.2em;
+            }
+
+            &:hover {
+                background:rgb(248, 252, 2);
+                background: linear-gradient(rgb(248, 252, 2), rgb(243, 5, 5));
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+        }
+        .play-demo {
+            font-size:1.1em;
+            @extend %bg-normal-3;
+            @media only screen and (max-width:680px){
+                font-size:.9em;
+            }
+            @media only screen and (max-width:440px){
+                font-size:.8em;
+                margin:0;
+            }
+
+            &:hover {
+                @extend %normal-6;
+            }
+        }
+        .win-up-to {
+            font-size:1.3em;
+            @media only screen and (max-width:680px){
+                font-size:1.1em;
+            }
+            @media only screen and (max-width:580px){
+                font-size:1em;
+            }
+            @media only screen and (max-width:440px){
+                display:none;
+            }
+            strong {
+                font-size:1em;
+            }
+        }
+    }
+}
+
+.home-scratch-cards {
+    .cover-fx3 {
+        .cell {
+            .play-now-main {
+                @media only screen and (max-width:850px){
+                    font-size:4.25em;
+                }
+                @media only screen and (max-width:780px){
+                    font-size:4em;
+                }
+                @media only screen and (max-width:740px){
+                    font-size:3.8em;
+                }
+                @media only screen and (max-width:700px){
+                    font-size:3.5em;
+                }
+                @media only screen and (max-width:680px){
+                    font-size:4.5em;
+                }
+                @media only screen and (max-width:580px){
+                    font-size:4em;
+                }
+                @media only screen and (max-width:520px){
+                    font-size:3.45em;
+                } 
+                @include sm {
+                    font-size:3.2em;
+                }
+                @media only screen and (max-width:460px){
+                    font-size:3em;
+                }
+                @include xsm {
+                    font-size:2.55em;
+                }
+                @media only screen and (max-width:350px){
+                    font-size:2.25em;
+                }
+               
+            }
+            .play-demo {
+                @media only screen and (max-width:700px){
+                    margin:5px 0 0 0;
+                }
+            }
+        }
+    }
+}
+
+.sslide-box-fx3 {
+
+    .cover-fx3,
+    .cover-fx3 .cell {
+        @extend %opacity-0; 
+    };
+
+    .cover-fx3 {
+        .cell {
+            @extend %padding-10;
+        }
+    }
+   
+    &:hover .cover-fx3,
+    &:hover .cover-fx3 .cell{
+         @extend %opacity-1;
+    };
+       
+    &:hover {
+        .cover-fx3 {
+            background:rgba(0,0,0,.7);
+            @include transform-2(scale(1), skew(0, 0));
+        };
+    }
+
+}
+
+

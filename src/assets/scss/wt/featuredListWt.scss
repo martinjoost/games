@@ -1,0 +1,45 @@
+.wt {
+    .bottom-in {
+        .featured-anima-box {
+            h4 {
+                @include md {
+                    font-size:6em!important;
+                }
+                @media only screen and (max-width:580px){
+                    font-size:5em!important;
+                }
+                @include sm {
+                    font-size:3.5em!important;
+                }
+                @media only screen and (max-width:390px){
+                    font-size:2em!important;
+                }
+            }
+            p {
+                @media only screen and (max-width:580px){
+                    font-size:1.2em!important;
+                }
+                @include sm {
+                    font-size:1em!important;
+                }
+            }
+        }
+    }
+    .featured-list {
+        @media only screen and (max-width:880px){
+            height:250px;
+        }
+        @media only screen and (max-width:680px){
+            height:200px;
+        }
+        @include sm {
+            height:150px;
+        }
+        @media only screen and (max-width:390px){
+            height:125px;
+        }
+    }
+}
+
+
+

@@ -1,0 +1,55 @@
+<section class="standard-section account bg-light-2 lato txt-center">
+    <article class="content-wrap">
+        <div class="relative-left account-header full-width y-items-center margin-bottom-20">
+            <div>
+                <h2 class="weight-400">
+                    Your WinTrillions
+                    <small class="block margin-top-5 weight-300"> <span *ngIf="loading">Loading your</span> Winning
+                        Account</small>
+                </h2>
+            </div>
+        </div>
+        <div>
+            <div class="relative-left full-width margin-bottom-35">
+                <h3 class="relative inline-block">
+                    <span class="relative">
+                        <figure class="inline-block avatar bg-normal-2 txt-center overflow-hidden">
+                            <img src="./assets/images/wt/avatars/01.svg" alt="avatar" width="60" />
+                        </figure>
+                        <button class="edit-avatar" mat-mini-fab aria-label="Edit your avatar">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                    </span>
+                    <span *ngIf="profileDetails && !loading" class="block margin-top-5">
+                         {{profileDetails.name}} 
+                    </span>
+                </h3>
+                <h3 *ngIf="error && !loading" class="relative-left full-width margin-bottom-35">
+                    <small class="block margin-top-5" class="login-error-msg">
+                        Something wrong happened, please
+                        <a (click)="reloadInfo()" href="javascript:void(0);" class="link weight-400">
+                            Try Again
+                        </a>.
+                    </small>
+                </h3>
+             
+            </div>
+            <div *ngIf="!loading">
+                 <nav class="relative-left full-width inner-nav mat-tab-header" mat-tab-nav-bar
+                aria-label="My Account menu links">
+                <a *ngFor="let item of links" mat-tab-link [routerLink]="item.url" routerLinkActive="current-tab"
+                    class="mat-tab-link mat-focus-indicator" [attr.title]="item.title" role="tab">
+                    {{item.title}}
+                </a>
+            </nav>
+            <div class="relative-left full-width margin-top-bottom-20">
+                <router-outlet></router-outlet>
+            </div> 
+            </div>
+          
+        </div>
+        <div class="relative-left full-width margin-top-bottom-35" *ngIf="loading">
+            <app-spinner></app-spinner>
+        </div>
+    </article>
+</section>

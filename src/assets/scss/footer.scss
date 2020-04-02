@@ -1,0 +1,13 @@
+footer {
+    height:70px;
+    @extend %bg-normal-10;
+    .footer-nav {
+
+        li {
+            
+            @extend %txt-left;
+            @extend %margin-left-right-10;
+            @extend %inline-block;
+        }
+    }
+}

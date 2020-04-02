@@ -1,0 +1,61 @@
+.wt {
+    .title-section {
+        margin-bottom:60px;
+    }
+
+    .mat-card.lotto-card {
+        @extend %padding-5;
+        @extend %transition-035;
+        @extend %bg-normal-2;
+        
+        .lotto-card-content {
+            height:230px;
+            z-index:10;
+            @extend %bg-light-2;
+            .lotto-logo {
+                width:auto;
+                @include md {
+                    width:60px;
+                }
+            }
+            .lotto-title {
+                font-size:1.6em;
+                @extend %line-height-normal;
+                span { 
+                    @extend %weight-400;
+                }
+            }
+            .jackpot,
+            .lotto-name {
+                color:#414752;
+            }
+    
+            .jackpot {
+                font-size:3em; 
+                .jackpot-val {
+                    font-size:1.3em;
+                }
+                @include md {
+                    font-size:2em;
+                }
+            }
+           
+            .date {
+                font-size:1.5em;
+                color:#414752;
+            }
+        }
+    
+    }
+
+    .home-lotto-slider {
+        &:hover {
+            .button {
+                @extend %bg-dark-9;
+            }
+        }
+    }
+    
+}
+
+

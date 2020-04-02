@@ -1,0 +1,36 @@
+// shine
+.shine:after {
+    content:'';
+    @extend %absolute;
+    @extend %top-0;
+    @extend %left--40p;
+    width:30px;
+    @extend %height-100-percent;
+    background:-moz-linear-gradient(left, rgba(240,249,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+    background:-webkit-linear-gradient(left, rgba(240,249,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%); 
+    background:linear-gradient(to right, rgba(240,249,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f0f9ff', endColorstr='#00ffffff',GradientType=1 ); 
+    @include backgroundClip(content-box);
+    @include transform(skewX(-10deg));
+    opacity:.3;
+    @include animation(shineAnim, 3s, ease-out, 0s, infinite, normal, none);
+}
+
+@include keyframes(shineAnim){
+    0% {
+      left:-50%;
+      opacity:.1;
+    }
+    70%{
+        left:-50%;
+    }
+    80%{
+        opacity:.2;
+    }
+    100% {
+      left:150%;
+      opacity:0;
+    }
+};
+  
+

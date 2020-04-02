@@ -1,0 +1,272 @@
+%pointer {
+    cursor: pointer;
+}
+  
+%bullets-none{
+    list-style: none;
+}
+  
+%overflow-hidden {
+    overflow: hidden;
+} 
+  
+%border-none {
+    border:none;
+}
+
+// background clip 
+@mixin backgroundClip($param) {
+    @each $prefix in $prefixes {
+        @if($prefix != nth($prefixes, 2)) {
+            #{$prefix + background-clip}: $param;
+        }
+    }
+    background-clip: $param;
+}
+
+img,
+video {
+    max-width: 100%;
+    @extend %height-auto;
+}
+
+input:focus,
+input:required:focus,
+a:focus {
+    outline: 0;
+}
+*:focus {outline:none};
+
+@for $i from 1 through 5 {
+    h#{$i}{
+        @extend %weight-400;
+    }
+}
+
+strong  {
+    @extend %weight-400;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+a {
+    @extend %transition-035;
+    @extend %underline-none;
+}
+
+// ellipsis
+%ellipsis {
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    @extend %overflow-hidden;
+}
+
+.ellipsis {
+    @extend %ellipsis;
+}
+
+.relative-left {
+    @extend %relative;
+    @extend %fleft;
+}
+
+.relative-right {
+    @extend %relative;
+    @extend %fright;
+}
+
+.full-width {
+    @extend %width-100-percent;
+}
+
+.half-width {
+    @extend %width-50-percent;
+}
+
+.full-height {
+    @extend %height-100-percent;
+}
+
+.vh-100 article {
+    @extend %width-100-percent;
+}
+
+.bullets-none {
+@extend %bullets-none;
+}
+  
+  
+.overflow-hidden {
+    @extend %overflow-hidden;
+}
+
+.border-none {
+    @extend %border-none;
+}
+  
+  
+//main tags
+.main-wrapper,
+header,
+nav,
+main,
+section,
+article{
+  @extend %relative;
+}
+
+.main-wrapper.full,
+header,
+nav,
+main,
+section,
+article{
+    @extend %fleft;
+}
+
+.main-wrapper,
+header,
+main,
+section,
+article,
+.content-wrap,
+footer {
+    @extend %width-100-percent;
+}
+   
+footer  {
+    @extend %absolute;
+    @extend %left-0;
+    @extend %bottom-0;
+}
+
+.main-wrapper,
+.main,
+.anim-page {
+  @extend %overflow-hidden;
+}
+
+.main-wrapper,
+main {
+  min-height:100%;
+}
+
+.content-wrap,
+.full-hd,
+.w-standard-lg,
+.w-standard-md,
+.w-standard-sm,
+.hd {
+    @extend %fnone;
+    @extend %margin-auto;
+}
+
+.content-wrap {  
+    @extend %relative;
+    @extend %width-100-percent;
+    padding:0 2%;
+}
+
+%blend-color {
+    mix-blend-mode: multiply;
+}
+
+.blend-color {
+    @extend %blend-color;
+}
+
+.full-surface {
+    @extend %absolute;
+    @extend %top-0;
+    @extend %left-0;
+    @extend %width-100-percent;
+    @extend %height-100-percent;
+}
+
+//green bg degree
+.green-bgg {
+    background: #85ef16;
+    background: -webkit-gradient(linear, left top, right top, from(#85ef16), to(#65bc00));
+    background: linear-gradient(to right, #85ef16 0%, #65bc00 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#85ef16', endColorstr='#65bc00',GradientType=1 );
+}
+
+.yellow-bgg {
+    background: #ffc500;
+    background: -webkit-gradient(linear, left top, right top, from(#ffc500), to(#d11d05));
+    background: linear-gradient(to right, #ffc500 0%,#d11d05 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc500', endColorstr='#d11d05',GradientType=1 );
+}
+
+//ribbon
+@import 'ribbon.scss';
+.simple-ribbon {
+    font-size:1em;
+    height:30px;
+    line-height:25px;
+    @extend %padding-left-right-20;
+    @extend %inline-block;
+    text-shadow: 0 0 5px rgba(0,0,0,.9);
+    @media only screen and (max-width:580px) {
+        font-size:.8em;
+        height:20px;
+        line-height: 15px;
+        padding:0 10px;
+    }
+    @include xsm {
+        font-size:.6em;
+        height:15px;
+        line-height: 10px;
+        padding:0 6px;
+    }
+}
+    
+//main
+main {
+    padding:0 0 80px 0;
+}
+
+    // section standard
+    .standard-section {
+        @extend %padding-top-bottom-30;
+        h2 {
+            font-size:4em;
+            small {
+                font-size:.5em;
+            }
+        }
+    }
+
+    .wt .standard-section {
+        padding:60px 0;
+        @extend %txt-center;
+        h2 {
+            font-size:7em;
+            small {
+                font-size:.5em;
+            }
+            @include xmd{
+                font-size:6em;
+            }
+            @include md{
+                font-size:5em;
+            }
+            @media only screen and (max-width:580px){
+                font-size:4em;
+            }
+            @include sm {
+                font-size:3em;
+            }
+        }
+
+    }
+    
+
+  

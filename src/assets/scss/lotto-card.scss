@@ -1,0 +1,36 @@
+
+.mat-card.lotto-card {
+    @extend %padding-5;
+    @extend %transition-035;
+    @include transform(scale(1));
+    .lotto-card-content {
+        height:320px;
+        z-index:10;
+        @extend %transition-035;
+        transform-origin: bottom center;
+        .lotto-logo {
+            width:90px;
+        }
+        .lotto-title {
+            font-size:1.8em;
+            @extend %line-height-normal;
+            span { 
+                @extend %weight-300;
+            }
+        }
+        .jackpot {
+            font-size:3em
+        }
+        .date {
+            font-size:1.2em;
+        }
+    }
+    svg {
+        @extend %absolute;
+        @extend %bottom-0;
+        @extend %left-0;
+    }
+}
+ 
+
+

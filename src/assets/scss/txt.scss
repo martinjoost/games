@@ -1,0 +1,51 @@
+$txt:(
+  txt-left:left,
+  txt-right:right,
+  txt-center:center,
+  txt-justify:justify,
+  underline:underline,
+  line-through:line-through,
+  overline:overline,
+  underline-none:none,
+  decoration-none:none,
+  uppercase:uppercase,
+  lowercase:lowercase,
+  capitalize:capitalize,
+  transform-normal:normal,
+  cursive:italic,
+  font-style-normal:normal,
+  letter-spacing--05:-.5px,
+  letter-spacing--1:-1px,
+  letter-spacing-05:.5px,
+  letter-spacing-1:1px
+);
+
+@each $name, $prop in $txt{
+
+    $i: index($txt, $name $prop);
+    @if ($i <= 4){
+      %#{$name}{
+        text-align:$prop;
+      }
+    }@else if($i == 5 or $i <= 9){
+      %#{$name}{
+        text-decoration: $prop;
+      } 
+    }@else if($i == 10 or $i <= 13){
+      %#{$name}{
+        text-transform: $prop;
+      }
+    }@else if($i == 14 or $i <= 15){
+      %#{$name}{
+        font-style: $prop;
+      }
+    }@else {
+      %#{$name}{
+        letter-spacing: $prop;
+      } 
+    }
+    .#{$name}{
+      @extend %#{$name};
+    }
+} 
+  

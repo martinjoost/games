@@ -1,0 +1,9 @@
+//box sizing
+@mixin boxSizing($val) {
+    @each $prefix in $prefixes {
+        @if($prefix != nth($prefixes, 2)) {
+            #{$prefix + box-sizing}: $val;
+        }
+    }
+    box-sizing: $val;
+}

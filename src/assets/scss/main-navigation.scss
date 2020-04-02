@@ -1,0 +1,29 @@
+.main-menu-icon.mat-icon-button {
+    font-size:30px;
+}
+
+.main-nav {
+    background: rgba(0,0,0,.9);
+    transform-origin: top center;
+    ul {
+        
+        li {
+            @extend %fleft;
+            @extend %width-100-percent;
+            a {
+                @extend %inline-block;
+                @extend %light-2;
+                @extend %transition-035;
+                @extend %line-height-normal;
+                &:hover {
+                   @extend %light-2;
+                }
+            };
+            a.router-link-active {
+               @extend %dark-2;
+            }
+        
+        }
+    }
+  
+}

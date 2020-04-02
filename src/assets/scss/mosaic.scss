@@ -1,0 +1,40 @@
+
+.mosaic { 
+    max-width:1280px;
+    column-count: 4;
+    column-gap: .2em;
+
+
+    column-fill: initial;
+    .item { 
+        background-color: #eee;
+        display: inline-block;
+        margin: 0 0 .25em;
+        width: 100%;
+      }
+
+    img {
+      width:100%;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .mosaic {
+      column-count: 4;
+    }
+  }
+  
+  
+  @media only screen and (max-width: 1023px) and (min-width: 768px) {
+    .mosaic {
+      column-count: 3;
+    }
+  }
+
+  @media only screen and (max-width: 767px) and (min-width: 540px) {
+    .mosaic {
+      column-count: 2;
+    }
+  }
+  
+  

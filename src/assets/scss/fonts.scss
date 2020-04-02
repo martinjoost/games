@@ -1,0 +1,46 @@
+$fonts:(
+  arial:(Arial, Helvetica, sans-serif),
+  helvetica:(Helvetica, Arial, sans-serif),
+  pt-sans:("PT Sans", Arial, Helvetica, sans-serif),
+  open-sans:("Open Sans", Arial, Helvetica, sans-serif),
+  open-sans-cond:("Open Sans Condensed", Arial, Helvetica, sans-serif),
+  lato:("Lato", Arial, Helvetica, sans-serif),
+  lora:("Lora", Arial, Helvetica, sans-serif),
+  roboto:("Roboto", Arial, Helvetica, sans-serif),
+  staatliches:("Staatliches", Arial, Helvetica, sans-serif),
+  julius:("Julius Sans One", Arial, Helvetica, sans-serif),
+  lobster:("Lobster", Arial, Helvetica, cursive),
+  pt-serif:("PT Serif", Arial, Helvetica, sans-serif),
+  montserrat:("Montserrat", Arial, Helvetica, sans-serif),
+  playfair:("Playfair Display", Arial, Helvetica, sans-serif),
+  awesome:("FontAwesome"),
+  awesome5:("Font Awesome 5 Free")
+);
+// fonts
+@each $name, $font in $fonts {
+    %#{$name}{
+      font-family: $font;
+    }
+    .#{$name} {
+      @extend %#{$name};
+    }
+}
+// font weight
+@for $i from 1 through 9 {
+  %weight-#{$i * 100} {
+    font-weight:#{$i * 100};
+  }
+
+  .weight-#{$i * 100} {
+    @extend %weight-#{$i * 100};
+  }
+}
+
+//line-height
+%line-height-normal {
+  line-height: normal;
+}
+
+.line-height-normal {
+  @extend %line-height-normal;
+}

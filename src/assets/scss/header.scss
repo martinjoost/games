@@ -1,0 +1,131 @@
+header {
+    height:80px;
+    @extend %transition-035;
+    .header-top-bar {
+        height:65px;
+        background:rgba(255,255,255,.9);
+        img {
+            @media only screen and (max-width:580px) {
+                width:144px;
+            } 
+            @include xsm {
+                width:124px;
+            }
+        }
+       
+    }
+    .header-bottom-bar {
+        height:35px;
+        background:rgba(0,0,0,.9);
+        .header-bottom-nav-menu {
+            button {
+                @extend %padding-none;
+                @extend %border-none;
+                @extend %bg-transparent;  
+            }
+        }
+        .sub-menu {
+            width:45%;
+            padding:10px 1%;
+            bottom:auto;
+            box-shadow: 0px 5px 5px 0px rgba(0,0,0,.25);
+            @include xmd {
+                width:55%;
+            }
+            @include md {
+                width:75%;
+            }
+            @media only screen and (max-width:680px){
+                width:100%;
+            }
+            h4 {
+                font-size:1.8em;
+                a {
+                    top:4px;
+                    font-size:.8em;
+                    &:hover {
+                        @extend %dark-7;
+                        @extend %underline;
+                    }
+                }
+            }
+            .sub-menu-jackpot {
+                font-size:2em;
+                @media only screen and (max-width:580px) {
+                    font-size:1.8em;
+                }
+                @include sm {
+                    font-size:1.6em;
+                }
+                strong {
+                    font-size:1.2em;
+                }
+            }
+            h5 {
+                font-size:1.1em;
+            }
+            h5,
+            h5 small span {
+                @include xsm {
+                    width:100%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+            h5 {
+                small {
+                    @media only screen and (max-width:580px){
+                        font-size:.8em;
+                    }
+                }
+            }
+            li {
+                width:48%;
+                box-shadow:0 0 3px rgba(0,0,0,.25);
+                @include borderRadius(5px);
+                margin:0 0 12px 0;
+                @include md {
+                    height:230px;
+                }
+            }
+        }
+
+    }
+}
+
+.header-bottom-nav-menu {
+    li {
+        @extend %fleft;
+        @extend %margin-right-25;
+        @media only screen and (max-width:680px){
+            margin:0 10px 0 0;
+        }
+        @include sm {
+            &:nth-child(6){
+                display:none;
+            }
+        }
+        @media only screen and (max-width:400px){
+            &:nth-child(7){
+                display:none;
+            }
+        }
+        @media only screen and (max-width:360px){
+           margin:0 8px 0 0;
+        }
+        a, button {
+            @extend %lato;
+            font-size:1.6em;
+            @extend %light-2;
+            @extend %weight-300;
+            @extend %transition-035;
+           &:hover {
+               @extend %dark-2;
+           }
+           @media only screen and (max-width:680px){
+               font-size:1.3em;
+           }
+        }
+    }
+}

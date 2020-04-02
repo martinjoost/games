@@ -1,0 +1,113 @@
+.wt {
+    .standard-section.account {
+        padding:40px 0 60px 0;
+        h2 {
+            font-size:3.5em;
+            small {
+                font-size:.6em
+            }
+        }
+        h3 {
+            font-size:1.6em;
+        }
+        .mat-tab-links {
+           @extend %x-content-center;
+        }
+        .edit-avatar.mat-mini-fab {
+            @extend %absolute;
+            @extend %bottom-10;
+            @extend %right--5;
+            width:25px;
+            height:25px;
+            line-height: 25px;
+            .mat-button-wrapper {
+                @extend %padding-none;
+                line-height: 0px;
+                .mat-icon {
+                    width:15px;
+                    height:15px;
+                    font-size:15px;
+                    line-height: 15px;
+                }
+            }
+        }
+        .account-form-wrap{
+            max-width:780px;
+            @extend %margin-auto;
+            @include smd {
+                padding:0 15px;
+            }
+        }
+
+        .mat-stepper-label-position-bottom {
+            .mat-horizontal-stepper-header {
+                padding:24px 14px;
+            }
+        }
+        .mat-step-header {
+            .mat-step-icon-selected {
+                @extend %bg-normal-1;
+            }
+            .mat-step-icon-state-edit {
+                @extend %bg-light-9;
+            }
+        }
+        .mat-radio-button,
+        .mat-stepper-horizontal {
+            @extend %lato;
+        }
+
+        .mat-radio-button {
+            @extend %margin-right-15; 
+        }
+
+        .mat-radio-group {
+            @extend %fleft;
+            margin:10px 0 30px 0;
+            @extend %txt-left;
+            mat-label {
+                @extend %relative;
+                @extend %width-100-percent;
+                @extend %block;
+                top:2px;
+                margin:0 15px 20px 0;
+                font-size:14px;
+            }
+        }
+
+        .mat-radio-label-content {
+            font-size:13px;
+            @extend %weight-300;
+        }
+
+        .mat-radio-button.mat-accent {
+            .mat-radio-inner-circle {
+                @extend %bg-normal-7;
+            }
+        }
+        
+        .mat-radio-button.mat-accent.mat-radio-checked {
+            .mat-radio-outer-circle {
+                border-color:map-get(map-get($sitePalette, c7), primary);
+            }
+        } 
+
+        .mat-horizontal-content-container {
+            padding:0 14px 14px 14px;
+        }
+
+        .basic-notification {
+            h4 {
+                font-size:1.6em;
+            }
+        }
+
+        .done-box {
+            h4 {
+                font-size:2em;
+            }
+        }
+
+    }
+   
+}

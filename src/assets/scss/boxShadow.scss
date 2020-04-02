@@ -1,0 +1,18 @@
+// box shadow
+%box-shadow-dark {
+  box-shadow: $shadow-dark;
+}
+%box-shadow-white {
+  box-shadow: $shadow-white;
+}
+.box-shadow-dark {
+  @extend %box-shadow-dark;
+}
+.box-shadow-white {
+  @extend %box-shadow-white;
+}
+
+//custom box-shadow rgba
+@mixin customBoxShadow($val1, $val2, $val3, $val4, $red, $green, $blue, $alpha){
+  box-shadow:$val1 $val2 $val3 $val4 rgba($red, $green, $blue, $alpha);
+}

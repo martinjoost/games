@@ -1,0 +1,66 @@
+.logo {
+    width:50px;
+    height:50px;
+    top:10px;
+    left:4.7%;
+    @extend %uppercase;
+    border:2px solid map-get(map-get($palette, c5), tlight);
+    @extend %bg-transparent;
+    @extend %transition-035;
+    @extend %txt-center;
+    @extend %overflow-hidden;
+    @extend %pointer; 
+    h2 {
+        @extend %width-100-percent;
+        @extend %height-100-percent;
+        line-height: 60px;
+        @extend %opacity-0;
+        @include animation(fadeIn, 1s, ease-in, 1s, 1, normal, forwards);
+    };
+};
+.home-intro {
+    left:auto;
+    font-size:6em;
+    width:160px;
+    height:160px;
+    border:2px solid map-get(map-get($palette, c5), tlight);
+    @include xmd {
+        width:130px;
+        height:130px;
+        font-size:4.5em;
+
+    };
+    h2 { 
+        line-height:160px;
+        @include xmd {
+            line-height:130px;
+        };
+    };
+    
+};
+
+.logo-description {
+    h3 {
+        font-size:1.5em;
+    }
+}
+.logo.border-none {
+    @extend %border-none;
+}
+
+.shine:after {
+    content:'';
+    @extend %absolute;
+    @extend %top-0;
+    @extend %left--40p;
+    width:30px;
+    @extend %height-100-percent;
+    background:-moz-linear-gradient(left, rgba(240,249,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+    background:-webkit-linear-gradient(left, rgba(240,249,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%); 
+    background:linear-gradient(to right, rgba(240,249,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f0f9ff', endColorstr='#00ffffff',GradientType=1 ); 
+    background-clip: content-box;
+    @include transform(skewX(-10deg));
+    opacity:.3;
+    @include animation(shineAnim, 3s, ease-out, 0s, infinite, normal, none);
+}

@@ -1,0 +1,24 @@
+<div class="relative full-width stepper-box account-form-wrap change-pass-wrap padding-left-right-40 lato">
+    <h3 class="relative-left full-width margin-top-bottom-30 weight-300">
+      Change your Password
+    </h3>
+    <div class="relative-left full-width two-boxes margin-top-bottom-10 change-pass-form-wrap"  [formGroup]="resetPass">
+      <mat-form-field class="box">
+        <mat-label>New Password</mat-label>
+        <input required formControlName="password" type="password" matInput>
+        <mat-icon matPrefix>lock</mat-icon>
+        <mat-error>Password required</mat-error>
+      </mat-form-field>
+      <mat-form-field class="box">
+        <mat-label>Re password</mat-label>
+        <input required formControlName="password_confirmation" type="password" matInput>
+          <mat-icon matPrefix>lock</mat-icon>
+          <mat-error *ngIf="resetPass.get('password_confirmation').errors?.MatchPassword">
+            Passwords not match
+          </mat-error>
+      </mat-form-field>
+      <button class="button black sm fine mat-sm" mat-button aria-label="Change your Password" aria-hidden="true">
+        Confirm
+      </button>
+    </div>
+</div>

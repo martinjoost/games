@@ -1,0 +1,77 @@
+<section class="home-intro" [ngClass]="[sys ? 'normal' : 'vh-100']" id="intro">
+  <article class="full-width full-height">
+     
+      <div class="relative">
+          <ng-container *ngIf="sys">
+              <app-home-intro-slider>
+              <li class="swiper-slide intro-home-slider z-index-100  relative-left overflow-hidden" *ngFor="let item of ('SLIDE.DEFAULT' | translate)" [style.background-image]="'url('+item.backgroundimage+')'">
+                  <div class="relative-left full-width full-height">
+                      <div class="box relative-left slide-intro-text full-height table">
+                          <div class="cell">
+                              <h4 class="lato weight-900 light-2">
+                                 {{item.text}}
+                              </h4>
+                          </div>
+                      </div>
+                      <div class="box relative-left full-height table">
+                          <div class="cell">
+                            
+                              <h2 class="lato relative inline-block light-2 weight-600 uppercase lotto-title margin-bottom-10">
+                                  <img width="46" class="lotto-logo absolute transition-035" [attr.src]="item.smallicon" [attr.alt]="item.name" />
+                                  <span class="lotto-title-span">
+                                    {{item.name}}<span class="inline-block lotto-title-line margin-left-right-5 weight-300">-</span><span class="weight-300 lotto-title-country">{{item.country}}</span>
+                                  </span>
+                              </h2>
+                              <div [className]="'bg-product-'+ item.id">
+                                  <h3 class="lato weight-400 light-2 block">
+                                      {{item.currency}}<strong class="weight-900 inline-block margin-left-right-5">{{item.jackpot}}</strong> {{'WORDS.MILLION' | translate}}
+                                  </h3>
+                                  <p class="lato next-draw weight-400 light-2 margin-bottom-15">
+                                    {{'BOX.NEXTDRAW' | translate}}:<span class="inline-block margin-left-right-5 weight-600">{{item.day}} {{item.daynum}}</span>-<span class="inline-block margin-left-right-5 weight-600">{{item.time}}</span>
+                                  </p>
+                                  <a *ngIf="item.url.indexOf('http') >-1" href="{{item.url}}" target="_blank">
+                                    <button class="button green big square full-width txt-center">
+                                        {{'BOX.PLAYNOW' | translate}}
+                                    </button>
+                                  </a>
+
+                                  <a *ngIf="item.url.indexOf('http') === -1" routerLink="{{item.url}}">
+                                    <button class="button green big square full-width txt-center">
+                                        {{'BOX.PLAYNOW' | translate}}
+                                    </button>
+                                  </a>
+                              </div>
+                             
+                          </div> 
+                      </div>       
+                  </div>
+              </li>   
+              </app-home-intro-slider>
+          </ng-container>
+          <ng-container *ngIf="!sys"> <ng-container *ngIf="!sys"></ng-container>
+            <app-home-intro-slider>
+                <li class="swiper-slide intro-home-slider z-index-100 flex row x-content-center y-items-center txt-center relative-left overflow-hidden" *ngFor="let item of ('DEFAULT.SLIDE'|translate)" [style.background-image]="'url('+item.backgroundimage+')'">
+                  <div class="cover-bg"></div>
+                  <div class="relative ">
+                      <img class="lotto-logo margin-bottom-10 transition-035" width="100" [attr.src]="item.smallicon" [attr.alt]="item.name" />
+                      <h2 class="roboto light-2 weight-600 uppercase lotto-title margin-bottom-10">
+                          {{item.name}}<span class="inline-block margin-left-right-5 weight-300">|</span><span class="weight-300">{{item.country}}</span>
+                      </h2>
+                      <h3 class="roboto weight-300 light-2">
+                        {{item.currency}}<strong class="weight-600 normal-6 inline-block margin-left-right-5 woow">{{item.jackpot}}</strong>{{item.time}}
+                      </h3>
+                      <p class="timer weight-300 light-2 roboto margin-bottom-30"><span id="td_lotto_countdown_days_1" class="num"><strong class="inline-block margin-right-5">{{item.day}}</strong>days</span>,
+                        <span id="td_lotto_countdown_hour_1" class="num"><strong class="inline-block margin-left-right-5">08</strong>hours</span> <span id="td_lotto_countdown_minute_1" class="num"><strong class="inline-block margin-left-right-5">12</strong>minutes</span> <span id="td_lotto_countdown_second_1" class="num"><strong class="inline-block margin-left-right-5">28</strong>seconds</span>
+                      </p>
+                      <button class="button green big roboto weight-400">  {{'BOX.PLAYNOW' | translate}}</button>
+                  </div>
+                        
+                </li>   
+            </app-home-intro-slider>
+          </ng-container>
+      </div>
+   
+  </article>
+</section>
+
+

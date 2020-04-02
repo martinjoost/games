@@ -1,0 +1,91 @@
+<div class="header-bottom-bar relative-left full-width">
+    <div class="content-wrap header-bottom-nav-menu full-height flex row y-items-center">
+        <ul class="bullets-none">
+            <li>
+                <button (mouseover)="fnIsShow(1)" (click)="fnIsShow(0)">
+                   Lotteries 
+                </button>
+            </li>
+            <li>
+                <button (mouseover)="fnIsShow(2)" (click)="fnIsShow(0)">
+                    Syndicates
+                </button>
+            </li>
+            <li>
+                <button (mouseover)="fnIsShow(3)" (click)="fnIsShow(0)">
+                  Raffles
+                </button>
+            </li>
+            <li>
+                <a href="#">
+                    Stratch Cards
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                  Games
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                   Promotions
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                 Results
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div *ngIf="isShow === 1 || isShow === 2 || isShow === 3"
+        class="sub-menu absolute left-0 full-width bg-light-2 padding-top-bottom-15 z-index-700">
+        <div class="content-wrap">
+
+            <h4 class="lato margin-bottom-20 weight-700">
+                <ng-container *ngIf="isShow === 1">Lotteries</ng-container>
+                <ng-container *ngIf="isShow === 2">Syndicates</ng-container>
+                <ng-container *ngIf="isShow === 3">Raffles</ng-container>
+                <span class="weight-300 inline-block margin-left-right-5">|</span><span class="weight-400 dark-4">Hot
+                    Jackpots</span>
+                <a href="#" class="relative-right normal-7 weight-400">View All</a>
+            </h4>
+            <ul class="bullets-none full-width flex row wrap space-around">
+                <li class="relative-left txt-center padding-10 " *ngFor="let item of arr">
+                    <ng-container *ngIf="isShow === 1 || isShow === 2">
+                        <img class="" [attr.src]="'./assets/images/lotto-logos/wt/'+item.id+'_icon_xbig.png'"
+                            width="76" />
+                    </ng-container>
+                    <ng-container *ngIf="isShow === 3">
+                        <img class="" [attr.src]="'./assets/images/lotto-logos/wt/raffle_'+item.id+'_icon_xbig.png'"
+                            width="76" />
+                    </ng-container>
+
+                    <p class="lato sub-menu-jackpot weight-600 margin-bottom-5">
+                        <span class="weight-400 inline-block margin-right-5">
+                            <ng-container *ngIf="item.currency === 'dolar'">$</ng-container>
+                            <ng-container *ngIf="item.currency === 'euro'">&euro;</ng-container>
+                            <ng-container *ngIf="item.currency === 'reales'">R$</ng-container>
+                            <ng-container *ngIf="item.currency === 'pound'">&pound;</ng-container>
+                        </span>
+                        <strong class="inline-block margin-right-5 weight-700">{{item.jackpot}}</strong>
+                        <span class="weight-400">Million</span>
+                    </p>
+                    <h5 class="block uppercase lato weight-600">{{item.name}}
+                        <ng-container *ngIf="item.type === 'lotto'"><span
+                                class="inline-block margin-left-right-5">-</span></ng-container>
+                        <small class="weight-300">
+                            <ng-container *ngIf="isShow === 1">{{item.country}}</ng-container>
+                            <ng-container *ngIf="isShow === 2"><span class="block">syndicate</span></ng-container>
+                            <ng-container *ngIf="isShow === 3"><span class="block">{{item.xinfo}}</span></ng-container>
+                        </small>
+                    </h5>
+                    <hr />
+                    <p class="date lato weight-300 margin-bottom-5">{{item.date}}</p>
+                    <p class="button sm red">Play Now!</p>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>

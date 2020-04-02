@@ -1,0 +1,19 @@
+html {
+    @include boxSizing(border-box);
+}
+    *, *:before, *:after {
+    @include boxSizing(inherit);
+}
+
+html, body {
+    @extend %height-100-percent;
+    @extend %margin-none;
+    @extend %padding-none;
+}
+
+body {
+    @extend %arial;
+    @extend %weight-400;
+    font-size: 62.5%;
+    //overflow-y: scroll;
+}

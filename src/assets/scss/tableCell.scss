@@ -1,0 +1,16 @@
+%table {
+    display:table;
+}
+
+%cell {
+    display:table-cell;
+    vertical-align: middle;
+}
+
+.table {
+    @extend %table;
+}
+
+.cell {
+    @extend %cell;
+}

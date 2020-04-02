@@ -1,0 +1,39 @@
+.wt {
+    header {
+        height:100px;
+        @media only screen and (max-width:580px){
+            height:90px;
+        }
+        @media only screen and (max-width:490px){
+            height:85px;
+        }
+        .header-top-bar {
+            @media only screen and (max-width:580px){
+                height:55px;
+            }
+            @media only screen and (max-width:490px){
+                height:50px;
+            }
+            .top-bar-logo {
+                top:2px;
+                img {
+                    @media only screen and (max-width:580px) {
+                        width:174px;
+                    } 
+                    @media only screen and (max-width:490px){
+                        width:164px;
+                    }
+                    @include xsm {
+                        width:134px;
+                    }
+                    @media only screen and (max-width:350px){
+                        width:124px;
+                    }
+                }
+            }
+           
+        }
+    }
+}
+
+
