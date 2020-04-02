@@ -1,9 +1,9 @@
-<ng-container>
+<ng-container *ngIf="sys">
     <section class="home-casino-games home-games-list standard-section bg-dark-3" id="casino-games">
         <article class="txt-center">
             <h2 class="lato weight-500 title-section light-2">
-                <small class="weight-300 block">Win Instant Prizes</small>
-                CASINO GAMES
+                <small class="weight-300 block">Win instant prizes</small>
+                Casino Games
             </h2>
             <div class="iframe-box relative-left full-width padding-top-bottom-40"
                 style="background:url(./assets/images/wt/open-games/casino/games-play-bg-min.jpg) center 0 no-repeat;">
@@ -27,8 +27,8 @@
                                     Island Row and the chance of bountiful wins of over <strong
                                         class="weight-900 light-7">5.000x</strong>!
                                 </p>
-                                <button class="button orange margin-left-right-5" (click)="playGame()">PLAY
-                                    NOW!</button>
+                                <button class="button orange margin-left-right-5" (click)="playGame()">Play
+                                    Now!</button>
                                 <button class="button outline margin-left-right-5" (click)="playGame()">Play
                                     Demo</button>
                             </div>
@@ -42,7 +42,7 @@
                     <h3 class="lato weight-300 light-2 relative-left full-width txt-left margin-bottom-15">
                         Hot
                     </h3>
-                    <!-- <app-standard-slider>
+                    <app-standard-slider>
                         <li class="swiper-slide sslide-box-fx3 relative-left overflow-hidden" *ngFor="let item of hot"
                             [ngClass]="{'shine':item.new}">
                             <img [attr.src]="'./assets/images/casino-games/'+item.id+'.jpg'" />
@@ -56,15 +56,16 @@
                                 class="cover-fx3 absolute top-0 left-0 full-width full-height black-bgg-fx txt-center table">
                                 <div class="cell">
                                     <a href="#" class="play-now-main lato light-2 weight-600 uppercase block">
-                                        Play Now
+                                      Play Now
                                     </a>
                                     <a href="#"
                                         class="play-demo margin-top-10 weight-300 inline-block light-2 capitalize padding-5">
-                                        Play Demo</a>
+                                       Play Demo</a>
                                 </div>
                             </div>
                         </li>
                     </app-standard-slider>
+
                     <h3 class="lato weight-300 light-2 relative-left full-width txt-left margin-bottom-15">
                         Slots
                     </h3>
@@ -82,26 +83,27 @@
                                 class="cover-fx3 absolute top-0 left-0 full-width full-height black-bgg-fx txt-center table">
                                 <div class="cell">
                                     <a href="#" class="play-now-main lato light-2 weight-600 uppercase block">
-                                        Play Now!
+                                       Play Now
                                     </a>
                                     <a href="#"
                                         class="play-demo margin-top-10 weight-300 inline-block light-2 capitalize padding-5">
-                                        Play Demo
+                                        Plat Demo</a>
                                 </div>
                             </div>
                         </li>
-                    </app-standard-slider> -->
+                    </app-standard-slider>
+
                     <h3 class="lato weight-300 light-2 relative-left full-width txt-left margin-bottom-15">
                         Tables
                     </h3>
-                    <!-- <app-standard-slider>
+                    <app-standard-slider>
                         <li class="swiper-slide sslide-box-fx3 relative-left overflow-hidden" *ngFor="let item of table"
                             [ngClass]="{'shine':item.new}">
                             <img [attr.src]="'./assets/images/casino-games/'+item.id+'.jpg'" />
                             <p *ngIf="item.new || item.popular"
                                 class="simple-ribbon absolute top-0 left-0 uppercase lato weight-600 light-2"
                                 [ngClass]="[item.new ? 'new-game' : 'popular-game']">
-                                <ng-container *ngIf="item.new">New</ng-container>
+                                <ng-container *ngIf="item.new">Now</ng-container>
                                 <ng-container *ngIf="item.popular">Popular</ng-container>
                             </p>
                             <div
@@ -112,11 +114,12 @@
                                     </a>
                                     <a href="#"
                                         class="play-demo margin-top-10 weight-300 inline-block light-2 capitalize padding-5">
-                                        Play Demo
+                                       Play Demo</a>
                                 </div>
                             </div>
                         </li>
                     </app-standard-slider>
+
                     <h3 class="lato weight-300 light-2 relative-left full-width txt-left margin-bottom-15">
                         Card Games
                     </h3>
@@ -127,7 +130,7 @@
                             <p *ngIf="item.new || item.popular"
                                 class="simple-ribbon absolute top-0 left-0 uppercase lato weight-600 light-2"
                                 [ngClass]="[item.new ? 'new-game' : 'popular-game']">
-                                <ng-container *ngIf="item.new">New</ng-container>
+                                <ng-container *ngIf="item.new">Now</ng-container>
                                 <ng-container *ngIf="item.popular">Popular</ng-container>
                             </p>
                             <div
@@ -135,15 +138,59 @@
                                 <div class="cell">
                                     <a href="#" class="play-now-main lato light-2 weight-600 uppercase block">
                                         Play Now
-                                    </a>
+                                        </a>
                                     <a href="#"
                                         class="play-demo margin-top-10 weight-300 inline-block light-2 capitalize padding-5">
                                         Play Demo</a>
                                 </div>
                             </div>
                         </li>
-                    </app-standard-slider> -->
+                    </app-standard-slider>
+
                 </div>
+
+            </div>
+
+        </article>
+        <!--<article class="content-wrap txt-center">
+            <h2 class="lato weight-500 title-section light-2">
+                <small class="weight-300 block">Win instant prizes</small>
+                 Casino Games 
+            </h2>
+            <app-featured-list gameType="games" ></app-featured-list>
+            <div class="relative-left full-width margin-top-bottom-15 home-casino-slider standard-slider">
+                <button class="button black">View All</button>
+            </div>
+        </article>-->
+    </section>
+</ng-container>
+<ng-container *ngIf="!sys">
+    <section class="home-casion-games standard-section green-bgg" id="casino-games">
+        <article class="content-wrap">
+            <h2 class="relative-left full-width weight-600 roboto section-title light-2 margin-bottom-20">
+                <span class="block margin-bottom-5">
+                    Games
+                </span>
+                <small class="block weight-300">
+                    Win instant prizes with Games
+                </small>
+            </h2>
+            <app-featured-list gameType="games"></app-featured-list>
+            <div class="relative-left full-width margin-bottom-15 home-casino-slider standard-slider">
+                <app-standard-slider>
+                    <li class="swiper-slide sslide-box-fx2 relative-left overflow-hidden" *ngFor="let item of ltkGames">
+
+                        <img [attr.src]="'./assets/images/casino-games/'+item.id+'.jpg'" />
+                        <div
+                            class="cover-fx2 absolute top-0 left-0 full-width full-height black-bgg-fx txt-center table">
+                            <div class="cell">
+                                <p class="button green">Play Now</p>
+                            </div>
+                        </div>
+
+                        <a href="#" aria-hidden="true" role="button" class="full-surface z-index-100"></a>
+                    </li>
+                </app-standard-slider>
             </div>
         </article>
     </section>

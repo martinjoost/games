@@ -4,19 +4,10 @@
             <div class="content-wrap full-height flex row y-items-center">
                 <figure class="relative top-bar-logo grow-1">
                     <a routerLink="/home" alt="home" [attr.title]="alt">
-                        <ng-container *ngIf="system === 'ltk'">
-                            <img class="ltk-iso" [attr.src]="'./assets/images/brand-logo/'+system+'/avatar-shadow.png'"
-                                width="50" [attr.alt]="alt" />
-                            <img class="ltk-logo-txt opacity-0 transition-035"
-                                [attr.src]="'./assets/images/brand-logo/' +system+ '/logo-txt.png'" width="190"
-                                [attr.alt]="alt" />
-                        </ng-container>
                         <ng-container *ngIf="system === 'wt'">
-                            <img *ngIf="!logoSpecialDay" class="logo"
-                                [attr.src]="'./assets/images/brand-logo/' +system+ '/logo.png'" width="224"
+                            <img class="logo"
+                                src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a0/Mega_Millions_Lottery_logo.svg/1200px-Mega_Millions_Lottery_logo.svg.png" width="224"
                                 [attr.alt]="alt" />
-
-                            <img *ngIf="logoSpecialDay" [src]="logoSpecialDay" width="200" />
                         </ng-container>
                     </a>
                 </figure>

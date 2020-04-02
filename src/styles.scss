@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+$percent:'%';
+$prefixes: ('-webkit-','-ms-','-moz-');
+$shadow-dark:0 0 10px rgba(0,0,0,.9);
+$shadow-white:0 0 10px rgba(255,255,255,.9);
+//motor
+@import './assets/scss/motor.scss';
+
+//custom
+@import './assets/scss/custom.scss';
+@import './assets/scss/featuredList.scss';
+@import './assets/scss/list-boxes.scss';
+@import './assets/scss/mosaic.scss';
+
+//header
+@import './assets/scss/header.scss';
+    //main-navigation
+    @import './assets/scss/main-navigation.scss';
+
+//home 
+@import './assets/scss/home.scss';
+    @import './assets/scss/home-new-product.scss';
+    @import './assets/scss/lotto-card.scss';
+
+
+//slider
+@import './assets/scss/slider.scss';
+
+//footer 
+@import './assets//scss/footer.scss';
+
+// current site styles
+@import './assets/scss/wt.scss';
+
+//animations presets
+@import './assets/scss/animationsPresets.scss';

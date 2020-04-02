@@ -4,7 +4,7 @@
         <div class="relative">
             <ng-container *ngIf="sys">
                 <app-home-intro-slider>
-                <li class="swiper-slide intro-home-slider z-index-100  relative-left overflow-hidden" *ngFor="let item of ('SLIDE.DEFAULT')" [style.background-image]="'url('+item.backgroundimage+')'">
+                <li class="swiper-slide intro-home-slider z-index-100  relative-left overflow-hidden" *ngFor="let item of items" [style.background-image]="'url('+item.backgroundimage+')'">
                     <div class="relative-left full-width full-height">
                         <div class="box relative-left slide-intro-text full-height table">
                             <div class="cell">

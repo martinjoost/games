@@ -11,7 +11,7 @@ export class SystemService {
     },
     {
       'system': 'wt',
-      'title': 'Wintrillions: More lotteries, more chances, more fun'
+      'title': 'More lotteries, more chances, more fun'
     }
   ];
   constructor() { }
