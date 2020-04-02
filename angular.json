@@ -103,6 +103,46 @@
               "devServerTarget": "games:serve:production"
             }
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/games/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [],
+              "sourceMap": false,
+              "optimization": true
+            }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "games:build",
+            "serverTarget": "games:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "games:build:production",
+              "serverTarget": "games:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "games:build",
+            "serverTarget": "games:server",
+            "routes": []
+          },
+          "configurations": {
+            "production": {}
+          }
         }
       }
     }
