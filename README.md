@@ -26,6 +26,8 @@ It is a normal angular 9 project.
    npm i
    ng serve
 ```
+Application Web (Angular using Material Design) - App at http://localhost:4200/
+
 ## :star2: Prerender Universal
 
 Prerender in Universal
@@ -33,7 +35,6 @@ Prerender in Universal
 ```sh
    ng run games:prerender
 ```
-Application Web (Angular using Material Design) - App at http://localhost:4200/
 
 ## Authors
 
