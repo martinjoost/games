@@ -1,8 +1,0 @@
-.home-games-list {
-    .swiper-button-next, .swiper-button-prev {
-        &:hover {
-            @extend %light-2;
-            text-shadow: 0 0 5px rgba($color: map-get(map-get($sitePalette, c3), tertiary), $alpha: .7);
-        }
-    }
-}

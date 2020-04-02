@@ -305,7 +305,7 @@ export class LoginComponent implements OnInit {
   }
 
   get setTitle() {
-    return this.state ? (this.title = 'LOGIN.PLACEHOLDER.WELCOMEBACK') : (this.title = 'LOGIN.PLACEHOLDER.WELCOMESINGUP');
+    return this.state ? (this.title = 'Welcome Back') : (this.title = 'WELCOME');
   }
 
   closeSignInUp(): void {

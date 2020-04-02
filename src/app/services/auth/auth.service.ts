@@ -69,11 +69,7 @@ export class AuthService {
 
   updateUser(data: UpdateUserModel): Observable<any> {
     const httpOptions = {
-      headers: {
-        authorization: `Bearer ${this.getToken()}`,
-        'Content-Type': 'application/json; charset=utf-8',
-        accept: ' application/json'
-      }
+      headers: this.getHeader()
     };
     return this.http.post(`${this.apiUrl}/api/users`, data, httpOptions);
   }
@@ -81,11 +77,7 @@ export class AuthService {
   logOutUser(): Observable<any> {
     this.isUserLoggedBehavior.next(false);
     const httpOptions = {
-      headers: {
-        'Content-Type': 'multipart/form-data; boundary=---011000010111000001101001',
-        Accept: 'application/json',
-        Authorization: `Bearer ${this.getToken()}`
-      }
+      headers: this.getHeader()
     };
     this.router.navigate(['/home']);
     return this.http.get(`${this.apiUrl}/api/users/logout`, httpOptions);
@@ -93,20 +85,14 @@ export class AuthService {
 
   recoveryAccount(data: RecoveryPasswordModel): Observable<any> {
     const httpOptions = {
-      headers: {
-        accept: 'application/json',
-        'Content-Type': 'application/json; charset=utf-8'
-      }
+      headers: this.getHeader()
     };
     return this.http.post(`${this.apiUrl}/api/password/recovery`, data, httpOptions);
   }
 
   recoveryAccountConfirm(data: RecoveryPasswordConfirmModel): Observable<any> {
     const httpOptions = {
-      headers: {
-        accept: 'application/json',
-        'Content-Type': 'application/json; charset=utf-8'
-      }
+      headers: this.getHeader()
     };
     return this.http.post(`${this.apiUrl}/api/password/recovery/confirm`, data, httpOptions);
   }

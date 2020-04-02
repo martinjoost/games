@@ -1,1 +1,50 @@
-<!-- THIS IS A TEMPLATE, PLEASE MODIFY THE .WT FILE OR OTHER-->
+<ng-container >
+    <div class="flex row wrap featured-list full-width" [ngClass]="{'big-center':bigCenter, 'big-left':bigLeft}" >
+        <div class="flex-item" *ngFor="let item of arr">
+            <div class="featured-list-box relative-left full-width full-height top-0 left-0 overflow-hidden bottom-in" [style.background-image]="'url(./assets/images/'+folderGameType+'/'+system+'/'+item.id+'.jpg)'">
+                <div class="featured-anima-box absolute full-width opacity-0 padding-10 transition-035 table">
+                    <div class="cell txt-center"> 
+                        <ng-container *ngIf="!wt">
+                            <p class="button big " [ngClass]="[item.state === 'popular' ? 'green' : 'red']">Play Now</p>
+                        </ng-container>
+                        <ng-container *ngIf="wt">
+                            <h4 class="lato light-2 opacity-05 weight-600" style="font-size:8em; opacity: .7;">
+                                PLAY
+                                <span class="block">NOW!</span> 
+                             </h4>
+                             <p class="weight-300 inline-block light-2 uppercase padding-5" style="font-size:1.6em;background:black;">catch your luck</p>
+                        </ng-container>
+                       
+                    </div>
+                </div> 
+               <div class="relative-left most-played full-width full-height transition-035">
+                    <img [attr.src]="'./assets/images/'+folderGameType+'/'+item.id+'.jpg'" class="xy-center-fx most-played">
+                </div>  
+                <a href="#" aria-hidden="true" role="button" class="full-surface z-index-100"></a> 
+                <p class="ribbon ribbon-top-left"><span>{{item.state}}</span></p>
+            </div>
+        </div>
+    </div>
+    </ng-container>
+   <!--<ng-container *ngIf="wt">
+    <div class="flex row wrap featured-list full-width" [ngClass]="{'big-center':bigCenter, 'big-left':bigLeft}" >
+        <mat-card class="flex-item" *ngFor="let item of arr">
+            <div class="featured-list-box relative-left full-width full-height top-0 left-0 overflow-hidden bottom-in" [style.background-image]="'url(./assets/images/'+folderGameType+'/'+system+'/'+item.id+'.jpg)'">
+                <div class="featured-anima-box absolute full-width opacity-0 padding-10 transition-035 table">
+                    <div class="cell txt-center"> 
+                            <h4 class="lato light-2 opacity-05 weight-600" style="font-size:8em; opacity: .7;">
+                               PLAY
+                               <span class="block">NOW!</span> 
+                            </h4>
+                            <p class="weight-300 inline-block light-2 uppercase padding-5" style="font-size:1.6em;background:black;">catch your luck</p>
+                    </div>
+                </div> 
+               <div class="relative-left most-played full-width full-height transition-035">
+                    <img [attr.src]="'./assets/images/'+folderGameType+'/'+item.id+'.jpg'" class="xy-center-fx most-played">
+                </div>  
+                <a href="#" aria-hidden="true" role="button" class="full-surface z-index-100"></a> 
+               
+            </div>
+        </mat-card>
+    </div>
+    </ng-container>--> 
