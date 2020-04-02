@@ -1,27 +1,39 @@
-# Games
+### :game_die: Lottery Games Online .net  in Angular 9 :game_die:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
+All features created from scratch, without UI libraries.
 
-## Development server
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Web App
+#### Includes (These features are made in Angular)
 
-## Code scaffolding
+- [x] Angular Universal
+- [x] Components, Services, Pipes, Models, Types and more
+- [x] Routing (same URLs)
+- [x] JSON files
+- [x] Assets (brands, preview and detail images)
+- [x] Statistics bar component working with real data
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## :star2: Installing/Running
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+It is a normal angular 6 project without any special dependencies.
 
-## Running unit tests
+```sh
+   git clone https://github.com/martinjoost/games
+   cd games
+   npm i
+   ng serve
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Application Web (Angular using Material Design) - App at http://localhost:4200/
 
-## Running end-to-end tests
+## Authors
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* **Martin Barria Joost** - *Initial work* - [GitHub](https://github.com/martinjoost)
 
-## Further help
+See also the list of [contributors](https://github.com/martinjoost/games) who participated in this project.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## License
+
+This project is licensed under the ISC License 
