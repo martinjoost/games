@@ -8,9 +8,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 #### Includes (These features are made in Angular)
 
 - [x] Angular Universal
-- [x] Components, Services, Pipes, Models, Types and more
+- [x] Components, Services, Pipes, Models, Types
 - [x] Routing (same URLs)
-- [x] Swiper
+- [x] ngx-useful-swiper
 - [x] JSON files
 - [x] Assets (brands, preview and detail images)
 - [x] Statistics bar component working with real data
