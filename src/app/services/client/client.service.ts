@@ -14,26 +14,6 @@ export class ClientService {
   getToken(): string {
     return this.storageService.getToken();
   }
-  getCountries() {
-    const httpOptions = {
-      headers: {
-        'Content-Type': 'application/json; charset=utf-8',
-        Accept: 'application/json'
-      }
-    };
-    return this.http.get(`${this.apiUrl}/api/countries`, httpOptions);
-  }
-
-  getStates() {
-    const httpOptions = {
-      headers: {
-        'Content-Type': 'application/json; charset=utf-8',
-        Accept: 'application/json',
-        Authorization: `Bearer ${this.getToken()}`
-      }
-    };
-    return this.http.get(`${this.apiUrl}/api/states`, httpOptions);
-  }
 
   getProfileDetails(): Observable<any> {
     const httpOptions = {
